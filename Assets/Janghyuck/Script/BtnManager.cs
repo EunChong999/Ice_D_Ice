@@ -6,34 +6,17 @@ using UnityEngine.UI;
 
 public class BtnManager : MonoBehaviour
 {
-    public GameObject intro;
-    public GameObject howToPlay;
-    
-    void Start()
+    [SerializeField] public GameObject setting;
+
+
+    public void Setting()
     {
-        
+        setting.SetActive(true);
     }
 
-    void Update()
+    public void SettingExit()
     {
-        
-    }
-
-    
-
-    public void Intro()
-    {
-        intro.SetActive(false);
-    }
-
-    public void HowToPlay()
-    {
-        howToPlay.SetActive(true);
-    }
-
-    public void HowToPlayExit()
-    {
-        howToPlay.SetActive(false);
+        setting.SetActive(false);
     }
 
     public void InGame()
