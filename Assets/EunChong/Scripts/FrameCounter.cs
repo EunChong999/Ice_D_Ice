@@ -17,7 +17,7 @@ public class FrameCounter : MonoBehaviour
 
     public bool isShow;
 
-    private void Start()
+    private void Awake()
     {
         Application.targetFrameRate = targetFrameRate;
     }

@@ -8,7 +8,7 @@ public class Checker : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Snow") || other.CompareTag("Ice"))
+        if (other.CompareTag("Snow") || other.CompareTag("Ice") || other.CompareTag("Dirt"))
         {
             isCollisioning = true;
         }
@@ -16,7 +16,7 @@ public class Checker : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Snow") || other.CompareTag("Ice"))
+        if (other.CompareTag("Snow") || other.CompareTag("Ice") || other.CompareTag("Dirt"))
         {
             isCollisioning = false;
         }

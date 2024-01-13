@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Ice : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] GameObject body;
+    public GameObject[] ices;
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeBody(int num)
     {
-        
+        Destroy(body);
+        body = Instantiate(ices[num], transform.position, ices[num].transform.rotation);
     }
 }

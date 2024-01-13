@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Point : MonoBehaviour
 {
-    private void OnTriggerStay(Collider other)
+    [SerializeField] int num;
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ice"))
         {
-            Debug.Log("step on the ice");
+            Debug.Log("»Æ¿Œ");
+            other.transform.GetComponent<Ice>().ChangeBody(num - 1);
         }
     }
 }
