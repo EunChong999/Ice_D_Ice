@@ -29,11 +29,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4096270603312727622}
-  - {fileID: 4760073055578495773}
-  - {fileID: 6749843551169134274}
-  - {fileID: 2640995669518106363}
-  - {fileID: 2286185650997707828}
   - {fileID: 9007420918819889113}
+  - {fileID: 4760073055578495773}
+  - {fileID: 2640995669518106363}
+  - {fileID: 6749843551169134274}
+  - {fileID: 2286185650997707828}
   m_Father: {fileID: 4587279628929336409}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 713306982169912203}
   - component: {fileID: 7379426967616533796}
   m_Layer: 0
-  m_Name: Point (5)
+  m_Name: Point (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,6 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dice: {fileID: 4587279628929336409}
+  isShapeChanged: 0
   num: 2
 --- !u!33 &6606743362831368942
 MeshFilter:
@@ -542,7 +544,7 @@ GameObject:
   - component: {fileID: 3390024568692841294}
   - component: {fileID: 2330474611647214867}
   m_Layer: 0
-  m_Name: Point (2)
+  m_Name: Point (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -575,6 +577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dice: {fileID: 4587279628929336409}
+  isShapeChanged: 0
   num: 5
 --- !u!33 &5614682461633117986
 MeshFilter:
@@ -689,7 +693,7 @@ GameObject:
   - component: {fileID: 714147983364842771}
   - component: {fileID: 7792138218164548185}
   m_Layer: 0
-  m_Name: Point (4)
+  m_Name: Point (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -722,6 +726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dice: {fileID: 4587279628929336409}
+  isShapeChanged: 0
   num: 6
 --- !u!33 &8259261943124021625
 MeshFilter:
@@ -836,7 +842,7 @@ GameObject:
   - component: {fileID: 4024199897655567095}
   - component: {fileID: 6312497372628584774}
   m_Layer: 0
-  m_Name: Point (3)
+  m_Name: Point (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -869,6 +875,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dice: {fileID: 4587279628929336409}
+  isShapeChanged: 0
   num: 4
 --- !u!33 &626984981602174735
 MeshFilter:
@@ -983,7 +991,7 @@ GameObject:
   - component: {fileID: 4795568688113825948}
   - component: {fileID: 7885103212372420594}
   m_Layer: 0
-  m_Name: Point (1)
+  m_Name: Point (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1016,6 +1024,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dice: {fileID: 4587279628929336409}
+  isShapeChanged: 0
   num: 3
 --- !u!33 &6283947992790174319
 MeshFilter:
@@ -1424,7 +1434,7 @@ GameObject:
   - component: {fileID: 5735724263982506160}
   - component: {fileID: 2633449968329201634}
   m_Layer: 0
-  m_Name: Point
+  m_Name: Point (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1457,6 +1467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dice: {fileID: 4587279628929336409}
+  isShapeChanged: 0
   num: 1
 --- !u!33 &3507735729625705962
 MeshFilter:
@@ -1567,7 +1579,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6a08a757b1206e547a27821bbf6b3784,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a08a757b1206e547a27821bbf6b3784,
         type: 3}
@@ -1651,9 +1663,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: 6a08a757b1206e547a27821bbf6b3784,
         type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: 6a08a757b1206e547a27821bbf6b3784,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: 6a08a757b1206e547a27821bbf6b3784,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: e4e7cc7ee9e17d64a9b72d1e4bf87949, type: 2}
+      objectReference: {fileID: -876546973899608171, guid: 6a08a757b1206e547a27821bbf6b3784,
+        type: 3}
+    - target: {fileID: -1461304994638716399, guid: 6a08a757b1206e547a27821bbf6b3784,
+        type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1461304994638716399, guid: 6a08a757b1206e547a27821bbf6b3784,
+        type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1461304994638716399, guid: 6a08a757b1206e547a27821bbf6b3784,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -6478536213147159724, guid: 6a08a757b1206e547a27821bbf6b3784,
+        type: 3}
     - target: {fileID: -516098083770646512, guid: 6a08a757b1206e547a27821bbf6b3784,
         type: 3}
       propertyPath: m_IsActive

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Point : MonoBehaviour
 {
+    [SerializeField] Transform dice;
+    [SerializeField] bool isShapeChanged;
     [SerializeField] int num;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ice"))
         {
-            Debug.Log("»Æ¿Œ");
-            other.transform.GetComponent<Ice>().ChangeBody(num - 1);
+            other.transform.GetComponent<Ice>().ChangeBody(num - 1, dice.eulerAngles.y);
         }
     }
 }
