@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class Dice : MonoBehaviour
     bool canReveal = false;
     bool isRevealing = false;
 
+    [SerializeField] float delay;
+    WaitForSeconds waitForSeconds;
+
     [SerializeField] Image[] hiddenImages;
     [SerializeField] Sprite[] diceFaces;
     [SerializeField] GameObject hiddenFaces;
@@ -17,6 +21,13 @@ public class Dice : MonoBehaviour
     public Point[] xPoints;
     public Point[] yPoints;
     public Point[] zPoints;
+
+    [SerializeField] CinemachineVirtualCamera virtualCamera;
+
+    private void Start()
+    {
+        waitForSeconds = new WaitForSeconds(delay);
+    }
 
     private void Update()
     {
@@ -49,6 +60,9 @@ public class Dice : MonoBehaviour
             hiddenFaces.SetActive(false);
             canReveal = false;
             isRevealing = false;
+            virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_XDamping = 2;
+            virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_YDamping = 2;
+            virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_ZDamping = 2;
         }
 
         if (!isMoving)
@@ -67,6 +81,9 @@ public class Dice : MonoBehaviour
                 if (Input.GetKey(KeyCode.Space))
                 {
                     hiddenFaces.SetActive(true);
+                    virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_XDamping = 1;
+                    virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_YDamping = 1;
+                    virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_ZDamping = 1;
                 }
             }
 
@@ -105,7 +122,7 @@ public class Dice : MonoBehaviour
 
     IEnumerator CoolTime()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return waitForSeconds;
         isRevealing = true;
     }
 
@@ -117,7 +134,7 @@ public class Dice : MonoBehaviour
         Vector3 rotationCenter = transform.position + direction / 2 + Vector3.down / 2;
         Vector3 rotationAxis = Vector3.Cross(Vector3.up, direction);
 
-        while(remainingAngle > 0)
+        while (remainingAngle > 0) 
         {
             float rotationAngle = Mathf.Min(Time.deltaTime * speed, remainingAngle);
             transform.RotateAround(rotationCenter, rotationAxis, rotationAngle);
