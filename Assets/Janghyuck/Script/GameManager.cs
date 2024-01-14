@@ -6,8 +6,21 @@ public class GameManager : MonoBehaviour
 {
     void Update()
     {
-        //ESC 누르면 게임 종료
-        if(Input.GetKeyDown(KeyCode.Escape))
+
+    }
+
+    public void ToIntro()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            
+        }
+    }
+
+    //게임 자체 종료
+    public void Exit()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }

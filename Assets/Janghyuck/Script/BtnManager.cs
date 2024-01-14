@@ -19,8 +19,18 @@ public class BtnManager : MonoBehaviour
         setting.SetActive(false);
     }
 
-    public void InGame()
+    public void Tutorial()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void StageChoice()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void InGame()
+    {
+        SceneManager.LoadScene(3);
     }
 }
