@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dice : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Dice : MonoBehaviour
     bool canReveal = false;
     bool isRevealing = false;
 
+    [SerializeField] Image[] hiddenImages;
+    [SerializeField] Sprite[] diceFaces;
     [SerializeField] GameObject hiddenFaces;
     public Checker[] checkers;
     public Point[] xPoints;
@@ -17,6 +20,30 @@ public class Dice : MonoBehaviour
 
     private void Update()
     {
+        foreach (var x in xPoints)
+        {
+            if (x.isHidden)
+            {
+                hiddenImages[1].sprite = diceFaces[x.num - 1];
+            }
+        }
+
+        foreach (var y in yPoints)
+        {
+            if (y.isHidden)
+            {
+                hiddenImages[2].sprite = diceFaces[y.num - 1];
+            }
+        }
+
+        foreach (var z in zPoints)
+        {
+            if (z.isHidden)
+            {
+                hiddenImages[0].sprite = diceFaces[z.num - 1];
+            }
+        }
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
             hiddenFaces.SetActive(false);
