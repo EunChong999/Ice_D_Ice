@@ -5,14 +5,21 @@ using UnityEngine;
 public class Point : MonoBehaviour
 {
     [SerializeField] Transform dice;
-    [SerializeField] bool isShapeChanged;
+    public bool isShapeChanged;
     [SerializeField] int num;
+    [SerializeField] Transform referencePoint;
+    public float distance;
+
+    private void Update()
+    {
+        distance = Vector3.Distance(transform.position, referencePoint.position);   
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ice"))
         {
-            other.transform.GetComponent<Ice>().ChangeBody(num - 1, dice.eulerAngles.y);
+            other.transform.GetComponent<Ice>().ChangeBody(num, isShapeChanged);
         }
     }
 }
