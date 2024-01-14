@@ -8,26 +8,37 @@ public class Dice : MonoBehaviour
     bool isMoving = false;
 
     public Checker[] checkers;
+    public Point[] xPoints;
+    public Point[] yPoints;
+    public Point[] zPoints;
 
     private void Update()
     {
         if (!isMoving)
         {
-            if (Input.GetKey(KeyCode.W) && checkers[0].isCollisioning)
+            if (Input.GetKey(KeyCode.W) && checkers[0].isCollisioning) // Z축으로 움직일 때
             {
                 StartCoroutine(Roll(Vector3.forward));
+
+                ChangeYZAxis();
             }
-            else if (Input.GetKey(KeyCode.A) && checkers[1].isCollisioning)
+            else if (Input.GetKey(KeyCode.A) && checkers[1].isCollisioning) // X축으로 움직일 때
             {
                 StartCoroutine(Roll(Vector3.left));
+
+                ChangeXYAxis();
             }
-            else if (Input.GetKey(KeyCode.S) && checkers[2].isCollisioning)
+            else if (Input.GetKey(KeyCode.S) && checkers[2].isCollisioning) // Z축으로 움직일 때
             {
                 StartCoroutine(Roll(Vector3.back));
+
+                ChangeYZAxis();
             }
-            else if (Input.GetKey(KeyCode.D) && checkers[3].isCollisioning)
+            else if (Input.GetKey(KeyCode.D) && checkers[3].isCollisioning) // X축으로 움직일 때
             {
                 StartCoroutine(Roll(Vector3.right));
+
+                ChangeXYAxis();
             }
         }
     }
@@ -74,6 +85,34 @@ public class Dice : MonoBehaviour
 
         // 반올림된 회전을 현재 오브젝트에 적용합니다.
         transform.rotation = Quaternion.Euler(roundedRotation);
+    }
+
+    void ChangeXYAxis()
+    {
+        Point[] xPointTemps = xPoints;
+        Point[] yPointTemps = yPoints;
+
+        foreach (var zPoint in zPoints)
+        {
+            zPoint.isShapeChanged = !zPoint.isShapeChanged;
+        }
+
+        xPoints = yPointTemps;
+        yPoints = xPointTemps;
+    }
+
+    void ChangeYZAxis()
+    {
+        Point[] yPointTemps = yPoints;
+        Point[] zPointTemps = zPoints;
+
+        foreach (var xPoint in xPoints)
+        {
+            xPoint.isShapeChanged = !xPoint.isShapeChanged;
+        }
+
+        yPoints = zPointTemps;
+        zPoints = yPointTemps;
     }
 }
 
