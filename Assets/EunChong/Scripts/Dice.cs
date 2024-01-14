@@ -7,6 +7,7 @@ public class Dice : MonoBehaviour
     public int speed = 300;
     bool isMoving = false;
 
+    [SerializeField] GameObject hiddenFaces;
     public Checker[] checkers;
     public Point[] xPoints;
     public Point[] yPoints;
@@ -16,6 +17,15 @@ public class Dice : MonoBehaviour
     {
         if (!isMoving)
         {
+            if (Input.GetKey(KeyCode.Space)) 
+            {
+                hiddenFaces.SetActive(true);
+            }
+            else
+            {
+                hiddenFaces.SetActive(false);
+            }
+
             if (Input.GetKey(KeyCode.W) && checkers[0].isCollisioning) // Z축으로 움직일 때
             {
                 StartCoroutine(Roll(Vector3.forward));
@@ -40,6 +50,10 @@ public class Dice : MonoBehaviour
 
                 ChangeXYAxis();
             }
+        }
+        else
+        {
+            hiddenFaces.SetActive(false);
         }
     }
 
