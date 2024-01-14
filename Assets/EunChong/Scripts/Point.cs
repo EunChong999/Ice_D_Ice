@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Point : MonoBehaviour
 {
-    [SerializeField] Transform dice;
     public bool isShapeChanged;
     [SerializeField] int num;
     [SerializeField] Transform referencePoint;
-    public float distance;
+    public bool isHidden;
 
     private void Update()
     {
-        distance = Vector3.Distance(transform.position, referencePoint.position);   
+        isHidden = Vector3.Distance(transform.position, referencePoint.position) > 5;   
     }
 
     private void OnTriggerEnter(Collider other)

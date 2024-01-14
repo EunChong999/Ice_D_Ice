@@ -6,6 +6,8 @@ public class Dice : MonoBehaviour
 {
     public int speed = 300;
     bool isMoving = false;
+    bool canReveal = false;
+    bool isRevealing = false;
 
     [SerializeField] GameObject hiddenFaces;
     public Checker[] checkers;
@@ -15,15 +17,30 @@ public class Dice : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            hiddenFaces.SetActive(false);
+            canReveal = false;
+            isRevealing = false;
+        }
+
         if (!isMoving)
         {
-            if (Input.GetKey(KeyCode.Space)) 
+            if (!canReveal)
             {
-                hiddenFaces.SetActive(true);
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    StartCoroutine(CoolTime());
+                    canReveal = true;
+                }
             }
-            else
+
+            if (isRevealing)
             {
-                hiddenFaces.SetActive(false);
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    hiddenFaces.SetActive(true);
+                }
             }
 
             if (Input.GetKey(KeyCode.W) && checkers[0].isCollisioning) // Z축으로 움직일 때
@@ -54,7 +71,15 @@ public class Dice : MonoBehaviour
         else
         {
             hiddenFaces.SetActive(false);
+            canReveal = false;
+            isRevealing = false;
         }
+    }
+
+    IEnumerator CoolTime()
+    {
+        yield return new WaitForSeconds(0.1f);
+        isRevealing = true;
     }
 
     IEnumerator Roll(Vector3 direction)
