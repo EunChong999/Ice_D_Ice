@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test : MonoBehaviour
+public class HiddenFace : MonoBehaviour
 {
     [SerializeField] Transform target;
     Vector3 originPos;
     [SerializeField] float speed;
+    Vector3 velocity = Vector3.zero;
 
     private void Start()
     {
@@ -27,7 +28,7 @@ public class Test : MonoBehaviour
     {
         while (transform.position != target.position)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+            transform.position = Vector3.SmoothDamp(transform.position, target.position, ref velocity, speed * Time.deltaTime);
             yield return null;
         }
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Point : MonoBehaviour
 {
     public bool isShapeChanged;
-    [SerializeField] int num;
+    public int num;
     [SerializeField] Transform referencePoint;
     public bool isHidden;
 
