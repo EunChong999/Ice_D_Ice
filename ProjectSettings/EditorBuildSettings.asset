@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Janghyuck/Scenes/Title.unity
     guid: 0f97237c3e27209409ec57ced3802fe7
   - enabled: 1
+    path: Assets/Janghyuck/Scenes/Tutorial.unity
+    guid: b475f83ff745c72469cc325f2de17864
+  - enabled: 1
     path: Assets/Janghyuck/Scenes/InGame.unity
     guid: 151f2c6a3ca754c4f86c01f791bd6404
   m_configObjects: {}
