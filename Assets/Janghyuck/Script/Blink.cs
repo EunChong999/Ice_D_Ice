@@ -12,7 +12,6 @@ public class Blink : MonoBehaviour
 
     void Start()
     {
-        // 깜빡임을 시작합니다.
         StartFlashing();
     }
 

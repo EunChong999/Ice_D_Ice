@@ -9,6 +9,6 @@ public class SetVolume : MonoBehaviour
 
     public void SetMusicVolume(float volume)
     {
-        musicsource.volume = volume;
+        musicsource.volume = 1 - volume;
     }
 }
