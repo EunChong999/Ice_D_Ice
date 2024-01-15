@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ice : MonoBehaviour
 {
     [SerializeField] bool isFixType;
+    [SerializeField] bool isChangedType;
     [SerializeField] float fixNum;
     [SerializeField] GameObject trueMat;
     [SerializeField] GameObject falseMat;
@@ -66,16 +67,40 @@ public class Ice : MonoBehaviour
                     switch (num)
                     {
                         case 2:
-                            trueMat.SetActive(false);
-                            falseMat.SetActive(true);
+                            if (isChangedType)
+                            {
+                                trueMat.SetActive(true);
+                                falseMat.SetActive(false);
+                            }
+                            else
+                            {
+                                trueMat.SetActive(false);
+                                falseMat.SetActive(true);
+                            }
                             break;
                         case 3:
-                            trueMat.SetActive(false);
-                            falseMat.SetActive(true);
+                            if (isChangedType)
+                            {
+                                trueMat.SetActive(true);
+                                falseMat.SetActive(false);
+                            }
+                            else
+                            {
+                                trueMat.SetActive(false);
+                                falseMat.SetActive(true);
+                            }
                             break;
                         case 6:
-                            trueMat.SetActive(true);
-                            falseMat.SetActive(false);
+                            if (isChangedType)
+                            {
+                                trueMat.SetActive(false);
+                                falseMat.SetActive(true);
+                            }
+                            else
+                            {
+                                trueMat.SetActive(true);
+                                falseMat.SetActive(false);
+                            }
                             break;
                         default:
                             trueMat.SetActive(true);
@@ -88,16 +113,40 @@ public class Ice : MonoBehaviour
                     switch (num)
                     {
                         case 2:
-                            trueMat.SetActive(true);
-                            falseMat.SetActive(false);
+                            if (isChangedType)
+                            {
+                                trueMat.SetActive(false);
+                                falseMat.SetActive(true);
+                            }
+                            else
+                            {
+                                trueMat.SetActive(true);
+                                falseMat.SetActive(false);
+                            }
                             break;
                         case 3:
-                            trueMat.SetActive(true);
-                            falseMat.SetActive(false);
+                            if (isChangedType)
+                            {
+                                trueMat.SetActive(false);
+                                falseMat.SetActive(true);
+                            }
+                            else
+                            {
+                                trueMat.SetActive(true);
+                                falseMat.SetActive(false);
+                            }
                             break;
                         case 6:
-                            trueMat.SetActive(false);
-                            falseMat.SetActive(true);
+                            if (isChangedType)
+                            {
+                                trueMat.SetActive(true);
+                                falseMat.SetActive(false);
+                            }
+                            else
+                            {
+                                trueMat.SetActive(false);
+                                falseMat.SetActive(true);
+                            }
                             break;
                         default:
                             trueMat.SetActive(true);
