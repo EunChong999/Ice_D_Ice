@@ -27,7 +27,17 @@ public class SceneManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            FadeEffect.instance.FadeOut();
+            StartCoroutine(SceneLoad());
+
+            FadeEffect.instance.FadeIn();
+            Debug.Log("ddas");
         }
+    }
+
+    IEnumerator SceneLoad()
+    {
+        yield return new WaitForSeconds(1f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }

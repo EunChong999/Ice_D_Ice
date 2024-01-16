@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FadeEffect : MonoBehaviour
 {
-    Animator animator;
+    [SerializeField] Animator animator;
     [SerializeField] bool isFadeIn;
     [SerializeField] bool canFadeIn;
     [SerializeField] bool canFadeOut;
@@ -28,8 +28,6 @@ public class FadeEffect : MonoBehaviour
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-
         fadeTime = new WaitForSeconds(1);
 
         FadeIn();
