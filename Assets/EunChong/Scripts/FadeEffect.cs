@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FadeEffect : MonoBehaviour
 {
+    [SerializeField] Image image1;
+    [SerializeField] Image image2;
     [SerializeField] Animator animator;
-    [SerializeField] bool isFadeIn;
-    [SerializeField] bool canFadeIn;
-    [SerializeField] bool canFadeOut;
+    public bool isFadeIn = true;
+    public bool canFadeIn = true;
+    public bool canFadeOut = true;
     WaitForSeconds fadeTime;
 
     public static FadeEffect instance = null;
@@ -29,8 +32,8 @@ public class FadeEffect : MonoBehaviour
     private void Start()
     {
         fadeTime = new WaitForSeconds(1);
-
-        FadeIn();
+        image1.raycastTarget = false;
+        image2.raycastTarget = false;
     }
 
     //Scene이 시작할 때(Title빼고)
@@ -41,6 +44,8 @@ public class FadeEffect : MonoBehaviour
             animator.SetTrigger("FadeIn");
             StartCoroutine(ResetFadeIn());
             canFadeIn = false;
+            image1.raycastTarget = true;
+            image2.raycastTarget = true;
         }
     }
 
@@ -49,6 +54,8 @@ public class FadeEffect : MonoBehaviour
         yield return fadeTime;
         isFadeIn = true;
         canFadeIn = true;
+        image1.raycastTarget = false;
+        image2.raycastTarget = false;
     }
 
     public void FadeOut()
@@ -57,8 +64,9 @@ public class FadeEffect : MonoBehaviour
         {
             animator.SetTrigger("FadeOut");
             StartCoroutine(ResetFadeOut());
-            //Scene이동
             canFadeOut = false;
+            image1.raycastTarget = true;
+            image2.raycastTarget = true;
         }
     }
 
@@ -67,5 +75,7 @@ public class FadeEffect : MonoBehaviour
         yield return fadeTime;
         isFadeIn = false;
         canFadeOut = true;
+        image1.raycastTarget = false;
+        image2.raycastTarget = false;
     }
 }

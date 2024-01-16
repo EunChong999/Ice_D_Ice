@@ -2689,6 +2689,12 @@ PrefabInstance:
       addedObject: {fileID: 369253694}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44deb2420ea6bc04b908f2122ffdd43d, type: 3}
+--- !u!4 &2004991570 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4587279628929336409, guid: 44deb2420ea6bc04b908f2122ffdd43d,
+    type: 3}
+  m_PrefabInstance: {fileID: 2004991569}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2017460745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2725,7 +2731,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 2004991570}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 8

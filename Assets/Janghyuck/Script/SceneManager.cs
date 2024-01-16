@@ -19,25 +19,40 @@ public class SceneManager : MonoBehaviour
 
     public void Update()
     {
-        Exit();
+        ToTitle();
     }
 
     //ESC를 눌렀을 때 Title로 이동하는 함수
-    public void Exit()
+    public void ToTitle()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            FadeEffect.instance.FadeOut();
-            StartCoroutine(SceneLoad());
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 0)
+            {
+                FadeEffect.instance.FadeOut();
 
-            FadeEffect.instance.FadeIn();
-            Debug.Log("ddas");
+                if (FadeEffect.instance.isFadeIn)
+                    StartCoroutine(SceneLoad(0));
+            }
+            else
+            {
+                Application.Quit();
+            }
         }
     }
 
-    IEnumerator SceneLoad()
+    public void ToStage(int index)
+    {
+        FadeEffect.instance.FadeOut();
+
+        if (FadeEffect.instance.isFadeIn)
+            StartCoroutine(SceneLoad(index + 1));
+    }
+
+    IEnumerator SceneLoad(int index)
     {
         yield return new WaitForSeconds(1f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(index);
+        FadeEffect.instance.FadeIn();
     }
 }

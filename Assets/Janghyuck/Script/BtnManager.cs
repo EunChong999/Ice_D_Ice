@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BtnManager : MonoBehaviour
 {
     public static BtnManager Instance;
-
+    [SerializeField] bool isTutorialCompleted;
 
     [SerializeField] public GameObject setting;
 
@@ -31,6 +31,23 @@ public class BtnManager : MonoBehaviour
 
     public void Tutorial()
     {
+        if (isTutorialCompleted) 
+        {
+            SceneManager.instance.ToStage(1);
+        }
+        else
+        {
+            FadeEffect.instance.FadeOut();
+
+            if (FadeEffect.instance.isFadeIn)
+                StartCoroutine(SceneLoad());
+        }
+    }
+
+    IEnumerator SceneLoad()
+    {
+        yield return new WaitForSeconds(1f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        FadeEffect.instance.FadeIn();
     }
 }

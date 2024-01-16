@@ -6,12 +6,13 @@ using UnityEngine;
 public class Finish : MonoBehaviour
 {
     [SerializeField] bool isCompleted;
+    [SerializeField] int index;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Point") && isCompleted)
         {
-            FadeEffect.instance.FadeOut();
+            SceneManager.instance.ToStage(index);
         }
     }
 
