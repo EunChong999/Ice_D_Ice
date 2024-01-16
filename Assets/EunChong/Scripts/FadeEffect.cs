@@ -35,6 +35,7 @@ public class FadeEffect : MonoBehaviour
         FadeIn();
     }
 
+    //Scene이 시작할 때(Title빼고)
     public void FadeIn()
     {
         if (canFadeIn && !isFadeIn) 
@@ -58,6 +59,7 @@ public class FadeEffect : MonoBehaviour
         {
             animator.SetTrigger("FadeOut");
             StartCoroutine(ResetFadeOut());
+            //Scene이동
             canFadeOut = false;
         }
     }

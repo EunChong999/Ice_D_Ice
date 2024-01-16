@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b94053fccaeed46bbadc98c2b37fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isCompleted: 0
+  isCompleted: 1
 --- !u!65 &3153508879001469636
 BoxCollider:
   m_ObjectHideFlags: 0

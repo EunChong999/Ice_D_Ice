@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Finish : MonoBehaviour
@@ -13,4 +14,6 @@ public class Finish : MonoBehaviour
             FadeEffect.instance.FadeOut();
         }
     }
+
+
 }

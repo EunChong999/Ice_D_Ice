@@ -29,18 +29,8 @@ public class BtnManager : MonoBehaviour
         setting.SetActive(false);
     }
 
-    public void Title()
-    {
-        SceneManager.LoadScene(0);
-    }
-
     public void Tutorial()
     {
-        SceneManager.LoadScene(1);
-    }
-
-    public void InGame()
-    {
-        SceneManager.LoadScene(2);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }
