@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
+    [SerializeField] bool isCompleted;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Point"))
+        if (other.CompareTag("Point") && isCompleted)
         {
-            Debug.Log("Finish!");
+            FadeEffect.instance.FadeOut();
         }
     }
 }
