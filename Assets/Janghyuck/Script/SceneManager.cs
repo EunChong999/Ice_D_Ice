@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
+    public bool isTutorialCompleted;
+
     public static SceneManager instance;
 
     private void Awake()
@@ -19,25 +21,38 @@ public class SceneManager : MonoBehaviour
 
     public void Update()
     {
-        ToTitle();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ToTitle();
+        }
+
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.visible = true;
+        }
     }
 
     //ESC를 눌렀을 때 Title로 이동하는 함수
     public void ToTitle()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 0)
         {
-            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 0)
-            {
-                FadeEffect.instance.FadeOut();
+            Cursor.visible = false;
 
-                if (FadeEffect.instance.isFadeIn)
-                    StartCoroutine(SceneLoad(0));
-            }
-            else
-            {
-                Application.Quit();
-            }
+            FadeEffect.instance.FadeOut();
+
+            if (FadeEffect.instance.isFadeIn)
+                StartCoroutine(SceneLoad(0));
+        }
+        else
+        {
+            Cursor.visible = true;
+
+            Application.Quit();
         }
     }
 

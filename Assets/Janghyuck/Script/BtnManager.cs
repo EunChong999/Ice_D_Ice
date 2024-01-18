@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class BtnManager : MonoBehaviour
 {
     public static BtnManager Instance;
-    [SerializeField] bool isTutorialCompleted;
 
     [SerializeField] public GameObject setting;
 
@@ -31,7 +30,7 @@ public class BtnManager : MonoBehaviour
 
     public void Tutorial()
     {
-        if (isTutorialCompleted) 
+        if (SceneManager.instance.isTutorialCompleted) 
         {
             SceneManager.instance.ToStage(1);
         }

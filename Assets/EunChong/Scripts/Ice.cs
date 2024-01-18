@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ice : MonoBehaviour
 {
+    public bool isCleared;
     [SerializeField] bool isFixType;
     [SerializeField] bool isChangedType;
     [SerializeField] float fixNum;
@@ -12,6 +13,14 @@ public class Ice : MonoBehaviour
     [SerializeField] GameObject body;
     public GameObject[] ices;
     float angle;
+
+    [SerializeField] GameObject effectMusic;
+    AudioSource[] audioSources;
+
+    private void Start()
+    {
+        audioSources = effectMusic.GetComponents<AudioSource>();
+    }
 
     public void ChangeBody(int num, bool isShapeChanged)
     {
@@ -69,11 +78,15 @@ public class Ice : MonoBehaviour
                         case 2:
                             if (isChangedType)
                             {
+                                audioSources[0].Play();
+                                isCleared = true;
                                 trueMat.SetActive(true);
                                 falseMat.SetActive(false);
                             }
                             else
                             {
+                                audioSources[1].Play();
+                                isCleared = false;
                                 trueMat.SetActive(false);
                                 falseMat.SetActive(true);
                             }
@@ -81,11 +94,15 @@ public class Ice : MonoBehaviour
                         case 3:
                             if (isChangedType)
                             {
+                                audioSources[0].Play();
+                                isCleared = true;
                                 trueMat.SetActive(true);
                                 falseMat.SetActive(false);
                             }
                             else
                             {
+                                audioSources[1].Play();
+                                isCleared = false;
                                 trueMat.SetActive(false);
                                 falseMat.SetActive(true);
                             }
@@ -93,16 +110,22 @@ public class Ice : MonoBehaviour
                         case 6:
                             if (isChangedType)
                             {
+                                audioSources[1].Play();
+                                isCleared = false;
                                 trueMat.SetActive(false);
                                 falseMat.SetActive(true);
                             }
                             else
                             {
+                                audioSources[0].Play();
+                                isCleared = true;
                                 trueMat.SetActive(true);
                                 falseMat.SetActive(false);
                             }
                             break;
                         default:
+                            audioSources[0].Play();
+                            isCleared = true;
                             trueMat.SetActive(true);
                             falseMat.SetActive(false);
                             break;
@@ -115,11 +138,15 @@ public class Ice : MonoBehaviour
                         case 2:
                             if (isChangedType)
                             {
+                                audioSources[1].Play();
+                                isCleared = false;
                                 trueMat.SetActive(false);
                                 falseMat.SetActive(true);
                             }
                             else
                             {
+                                audioSources[0].Play();
+                                isCleared = true;
                                 trueMat.SetActive(true);
                                 falseMat.SetActive(false);
                             }
@@ -127,11 +154,15 @@ public class Ice : MonoBehaviour
                         case 3:
                             if (isChangedType)
                             {
+                                audioSources[1].Play();
+                                isCleared = false;
                                 trueMat.SetActive(false);
                                 falseMat.SetActive(true);
                             }
                             else
                             {
+                                audioSources[0].Play();
+                                isCleared = true;
                                 trueMat.SetActive(true);
                                 falseMat.SetActive(false);
                             }
@@ -139,16 +170,22 @@ public class Ice : MonoBehaviour
                         case 6:
                             if (isChangedType)
                             {
+                                audioSources[0].Play();
+                                isCleared = true;
                                 trueMat.SetActive(true);
                                 falseMat.SetActive(false);
                             }
                             else
                             {
+                                audioSources[1].Play();
+                                isCleared = false;
                                 trueMat.SetActive(false);
                                 falseMat.SetActive(true);
                             }
                             break;
                         default:
+                            audioSources[0].Play();
+                            isCleared = true;
                             trueMat.SetActive(true);
                             falseMat.SetActive(false);
                             break;
@@ -157,6 +194,8 @@ public class Ice : MonoBehaviour
             }
             else
             {
+                audioSources[1].Play();
+                isCleared = false;
                 trueMat.SetActive(false);
                 falseMat.SetActive(true);
             }

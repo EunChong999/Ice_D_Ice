@@ -542,7 +542,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079e458ed4f1bfc43bcc5e7756d4b0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isCleared: 0
   isFixType: 0
+  isChangedType: 0
   fixNum: 0
   trueMat: {fileID: 2901747457447323436}
   falseMat: {fileID: 8935725396005139867}
@@ -554,6 +556,7 @@ MonoBehaviour:
   - {fileID: 5916215613414339493, guid: ded5998ba874baf4698b2ef15961249f, type: 3}
   - {fileID: 149496823988118742, guid: ca4cca1f113f9af43a685428fd2685a9, type: 3}
   - {fileID: 1398622995149103076, guid: 887f8be3c3d19764ea6a61f63080e442, type: 3}
+  effectMusic: {fileID: 0}
 --- !u!65 &4997039660352849707
 BoxCollider:
   m_ObjectHideFlags: 0
