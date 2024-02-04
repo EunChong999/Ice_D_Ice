@@ -85,11 +85,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 4587279628929336409}
   isShapeChanged: 0
   num: 2
   referencePoint: {fileID: 3065707385071436813}
-  distance: 0
+  isHidden: 0
+  isRolled: 0
+  effectMusic: {fileID: 0}
+  dice: {fileID: 9188633570337068642}
 --- !u!33 &6606743362831368942
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -725,11 +727,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 4587279628929336409}
   isShapeChanged: 0
   num: 5
   referencePoint: {fileID: 3065707385071436813}
-  distance: 0
+  isHidden: 0
+  isRolled: 0
+  effectMusic: {fileID: 0}
+  dice: {fileID: 9188633570337068642}
 --- !u!33 &5614682461633117986
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -967,11 +971,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 4587279628929336409}
   isShapeChanged: 0
   num: 6
   referencePoint: {fileID: 3065707385071436813}
-  distance: 0
+  isHidden: 0
+  isRolled: 0
+  effectMusic: {fileID: 0}
+  dice: {fileID: 9188633570337068642}
 --- !u!33 &8259261943124021625
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1118,11 +1124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 4587279628929336409}
   isShapeChanged: 0
   num: 4
   referencePoint: {fileID: 3065707385071436813}
-  distance: 0
+  isHidden: 0
+  isRolled: 0
+  effectMusic: {fileID: 0}
+  dice: {fileID: 9188633570337068642}
 --- !u!33 &626984981602174735
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1269,11 +1277,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 4587279628929336409}
   isShapeChanged: 0
   num: 3
   referencePoint: {fileID: 3065707385071436813}
-  distance: 0
+  isHidden: 0
+  isRolled: 0
+  effectMusic: {fileID: 0}
+  dice: {fileID: 9188633570337068642}
 --- !u!33 &6283947992790174319
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2015,11 +2025,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5af4e410fe0c2648b57aed505810aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: {fileID: 4587279628929336409}
   isShapeChanged: 0
   num: 1
   referencePoint: {fileID: 3065707385071436813}
-  distance: 0
+  isHidden: 0
+  isRolled: 0
+  effectMusic: {fileID: 0}
+  dice: {fileID: 9188633570337068642}
 --- !u!33 &3507735729625705962
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2129,7 +2141,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6a08a757b1206e547a27821bbf6b3784,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a08a757b1206e547a27821bbf6b3784,
         type: 3}
@@ -2342,13 +2354,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 150
+  isRolled: 0
+  delay: 0
+  hiddenImages: []
+  diceFaces: []
   hiddenFaces: {fileID: 2131448947794760424}
   checkers:
   - {fileID: 4681623029309823680}
   - {fileID: 175838370622913050}
   - {fileID: 4601130408814408343}
   - {fileID: 7590039948430536039}
-  points: []
   xPoints:
   - {fileID: 192171923442540421}
   - {fileID: 5571322097427229854}
@@ -2358,6 +2373,7 @@ MonoBehaviour:
   zPoints:
   - {fileID: 2060991957041712950}
   - {fileID: 6448753733774372125}
+  virtualCamera: {fileID: 0}
 --- !u!4 &4587279628929336409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6a08a757b1206e547a27821bbf6b3784,

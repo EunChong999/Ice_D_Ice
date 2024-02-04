@@ -11,6 +11,8 @@ public class Dice : MonoBehaviour
     bool canReveal = false;
     bool isRevealing = false;
 
+    [HideInInspector] public bool isRolled = false;
+
     [SerializeField] float delay;
     WaitForSeconds waitForSeconds;
 
