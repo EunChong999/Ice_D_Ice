@@ -8,7 +8,9 @@ public class Point : MonoBehaviour
     public int num;
     [SerializeField] Transform referencePoint;
     public bool isHidden;
+    public bool isRolled;
     [SerializeField] GameObject effectMusic;
+    [SerializeField] Dice dice;
     AudioSource[] audioSources;
 
     private void Start()
@@ -26,22 +28,35 @@ public class Point : MonoBehaviour
         if (other.CompareTag("Ice"))
         {
             other.transform.GetComponent<Ice>().ChangeBody(num, isShapeChanged);
-            audioSources[3].Play();
+
+            if (dice.isRolled)
+                audioSources[3].Play();
+
+            dice.isRolled = true;
         }
 
         if (other.CompareTag("Snow"))
         {
-            audioSources[4].Play();
+            if (dice.isRolled)
+                audioSources[4].Play();
+
+            dice.isRolled = true;
         }
 
         if (other.CompareTag("Dirt"))
         {
-            audioSources[2].Play();
+            if (dice.isRolled)
+                audioSources[2].Play();
+
+            dice.isRolled = true;
         }
     }
 
     public void FinSound()
     {
-        audioSources[5].Play();
+        if (dice.isRolled)
+            audioSources[5].Play();
+
+        dice.isRolled = true;
     }
 }
