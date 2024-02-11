@@ -14,7 +14,10 @@ public class Finish : MonoBehaviour
 
     private void Start()
     {
-        ices = FindObjectsOfType<Ice>();
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 1)
+        {
+            ices = FindObjectsOfType<Ice>();
+        }
     }
 
     bool CheckAllTrue(Ice[] array)
