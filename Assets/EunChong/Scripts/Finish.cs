@@ -12,6 +12,11 @@ public class Finish : MonoBehaviour
 
     public bool isLoading;
 
+    private void Start()
+    {
+        ices = FindObjectsOfType<Ice>();
+    }
+
     bool CheckAllTrue(Ice[] array)
     {
         // 배열 안에 있는 모든 값이 true인지 확인

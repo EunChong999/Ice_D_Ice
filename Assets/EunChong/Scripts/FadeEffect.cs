@@ -11,6 +11,7 @@ public class FadeEffect : MonoBehaviour
     public bool isFadeIn = true;
     public bool canFadeIn = true;
     public bool canFadeOut = true;
+    public bool isFading = false;
     WaitForSeconds fadeTime;
 
     public static FadeEffect instance = null;
@@ -35,6 +36,7 @@ public class FadeEffect : MonoBehaviour
     {
         if (canFadeIn && !isFadeIn) 
         {
+            isFading = true;
             animator.SetTrigger("FadeIn");
             StartCoroutine(ResetFadeIn());
             canFadeIn = false;
@@ -50,12 +52,14 @@ public class FadeEffect : MonoBehaviour
         canFadeIn = true;
         image1.raycastTarget = false;
         image2.raycastTarget = false;
+        isFading = false;
     }
 
     public void FadeOut()
     {
         if (canFadeOut && isFadeIn)
         {
+            isFading = true;
             animator.SetTrigger("FadeOut");
             StartCoroutine(ResetFadeOut());
             canFadeOut = false;
@@ -71,5 +75,6 @@ public class FadeEffect : MonoBehaviour
         canFadeOut = true;
         image1.raycastTarget = false;
         image2.raycastTarget = false;
+        isFading = false;
     }
 }
