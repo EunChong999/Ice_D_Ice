@@ -21,7 +21,7 @@ public class SceneManager : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !FadeEffect.instance.isFading)
         {
             ToTitle();
         }
