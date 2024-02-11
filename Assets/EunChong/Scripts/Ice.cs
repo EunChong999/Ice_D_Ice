@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Ice : MonoBehaviour
 {
@@ -14,12 +15,22 @@ public class Ice : MonoBehaviour
     public GameObject[] ices;
     float angle;
 
-    [SerializeField] GameObject effectMusic;
+    GameObject effectMusic;
     AudioSource[] audioSources;
 
     private void Start()
     {
+        effectMusic = GameObject.Find("EffectMusic");
         audioSources = effectMusic.GetComponents<AudioSource>();
+
+        if (transform.rotation.eulerAngles.y != 0) 
+        {
+            isChangedType = true;
+        }
+        else
+        {
+            isChangedType = false;
+        }
     }
 
     public void ChangeBody(int num, bool isShapeChanged)
