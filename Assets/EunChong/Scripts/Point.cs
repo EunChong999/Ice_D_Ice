@@ -50,6 +50,11 @@ public class Point : MonoBehaviour
 
             dice.isRolled = true;
         }
+
+        if (other.CompareTag("Fin"))
+        {
+            dice.isRolled = true;
+        }
     }
 
     public void FinSound()
