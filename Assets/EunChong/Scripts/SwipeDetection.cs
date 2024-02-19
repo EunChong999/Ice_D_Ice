@@ -69,24 +69,24 @@ public class SwipeDetection : MonoBehaviour
     {
         if (dice != null)
         {
-            if (Vector2.Dot(Vector2.up, direction) > directionThreshold)
+            if (Vector2.Dot(new Vector2(-1, 1), direction) > directionThreshold) 
             {
-                dice.ControlDice(0);
+                dice.order = 0;
             }
 
-            else if (Vector2.Dot(Vector2.left, direction) > directionThreshold)
+            else if (Vector2.Dot(new Vector2(-1, -1), direction) > directionThreshold) 
             {
-                dice.ControlDice(1);
+                dice.order = 1;
             }
 
-            else if (Vector2.Dot(Vector2.down, direction) > directionThreshold)
+            else if (Vector2.Dot(new Vector2(1, -1), direction) > directionThreshold)
             {
-                dice.ControlDice(2);
+                dice.order = 2;
             }
 
-            else if (Vector2.Dot(Vector2.right, direction) > directionThreshold)
+            else if (Vector2.Dot(new Vector2(1, 1), direction) > directionThreshold)
             {
-                dice.ControlDice(3);
+                dice.order = 3;
             }
         }
     }
