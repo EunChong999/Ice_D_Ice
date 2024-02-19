@@ -11,7 +11,6 @@ public class Ice : MonoBehaviour
     [SerializeField] float fixNum;
     [SerializeField] GameObject trueMat;
     [SerializeField] GameObject falseMat;
-    [SerializeField] GameObject body;
     public GameObject[] ices;
     float angle;
 
@@ -37,8 +36,6 @@ public class Ice : MonoBehaviour
     {
         if (!isFixType) 
         {
-            Destroy(body);
-
             if (isShapeChanged)
             {
                 switch (num)
@@ -75,8 +72,6 @@ public class Ice : MonoBehaviour
                         break;
                 }
             }
-
-            body = Instantiate(ices[num - 1], transform.position, Quaternion.Euler(transform.eulerAngles.x, angle, transform.eulerAngles.z));
         }
         else
         {
