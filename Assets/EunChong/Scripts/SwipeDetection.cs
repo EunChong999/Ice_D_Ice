@@ -67,7 +67,7 @@ public class SwipeDetection : MonoBehaviour
             }
         }
 
-        dice.holdingDetection.StopHolding();
+        dice.holdingDetection.canShow = false;
     }
 
     private void SwipeDirection(Vector2 direction)
