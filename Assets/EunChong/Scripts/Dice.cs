@@ -26,12 +26,17 @@ public class Dice : MonoBehaviour
     public Point[] zPoints;
 
     [SerializeField] CinemachineVirtualCamera virtualCamera;
-    private SwipeDetection swipeDetection;
+
+    [HideInInspector]
+    public SwipeDetection swipeDetection;
+    [HideInInspector]
+    public HoldingDetection holdingDetection;
 
     private void Start()
     {
         waitForSeconds = new WaitForSeconds(delay);
-        swipeDetection = FindObjectOfType<SwipeDetection>();
+        swipeDetection = GetComponent<SwipeDetection>();
+        holdingDetection = GetComponent<HoldingDetection>();
 
         swipeDetection.dice = this;
     }
@@ -40,7 +45,7 @@ public class Dice : MonoBehaviour
     {
         CheckHiddenFaces();
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (!holdingDetection.holding)
         {
             InitState();
 
@@ -51,7 +56,7 @@ public class Dice : MonoBehaviour
         {
             if (!canReveal)
             {
-                if (Input.GetKey(KeyCode.Space))
+                if (holdingDetection.canShow)
                 {
                     StartCoroutine(CoolTime());
                     canReveal = true;
@@ -60,7 +65,7 @@ public class Dice : MonoBehaviour
 
             if (isRevealing)
             {
-                if (Input.GetKey(KeyCode.Space))
+                if (holdingDetection.canShow)
                 {
                     hiddenFaces.SetActive(true);
 
