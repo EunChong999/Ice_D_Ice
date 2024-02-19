@@ -12,6 +12,7 @@ public class Dice : MonoBehaviour
     bool isRevealing = false;
 
     [HideInInspector] public bool isRolled = false;
+    [HideInInspector] public float order = -1;
 
     [SerializeField] float delay;
     WaitForSeconds waitForSeconds;
@@ -66,34 +67,35 @@ public class Dice : MonoBehaviour
                     RegulateDamping(1);
                 }
             }
+
+            if (order == 0 && checkers[0].isCollisioning) // Z축으로 움직일 때
+            {
+                StartCoroutine(Roll(Vector3.forward));
+                ChangeAxis(ref yPoints, ref zPoints, ref xPoints);
+                order = -1;
+            }
+            else if (order == 1 && checkers[1].isCollisioning) // X축으로 움직일 때
+            {
+                StartCoroutine(Roll(Vector3.left));
+                ChangeAxis(ref xPoints, ref yPoints, ref zPoints);
+                order = -1;
+            }
+            else if (order == 2 && checkers[2].isCollisioning) // Z축으로 움직일 때
+            {
+                StartCoroutine(Roll(Vector3.back));
+                ChangeAxis(ref yPoints, ref zPoints, ref xPoints);
+                order = -1;
+            }
+            else if (order == 3 && checkers[3].isCollisioning) // X축으로 움직일 때
+            {
+                StartCoroutine(Roll(Vector3.right));
+                ChangeAxis(ref xPoints, ref yPoints, ref zPoints);
+                order = -1;
+            }
         }
         else
         {
             InitState();
-        }
-    }
-
-    public void ControlDice(int order)
-    {
-        if (order == 0 && checkers[0].isCollisioning) // Z축으로 움직일 때
-        {
-            StartCoroutine(Roll(Vector3.forward));
-            ChangeAxis(ref yPoints, ref zPoints, ref xPoints);
-        }
-        else if (order == 1 && checkers[1].isCollisioning) // X축으로 움직일 때
-        {
-            StartCoroutine(Roll(Vector3.left));
-            ChangeAxis(ref xPoints, ref yPoints, ref zPoints);
-        }
-        else if (order == 2 && checkers[2].isCollisioning) // Z축으로 움직일 때
-        {
-            StartCoroutine(Roll(Vector3.back));
-            ChangeAxis(ref yPoints, ref zPoints, ref xPoints);
-        }
-        else if (order == 3 && checkers[3].isCollisioning) // X축으로 움직일 때
-        {
-            StartCoroutine(Roll(Vector3.right));
-            ChangeAxis(ref xPoints, ref yPoints, ref zPoints);
         }
     }
 

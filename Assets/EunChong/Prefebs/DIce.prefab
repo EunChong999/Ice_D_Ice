@@ -2363,6 +2363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 150
   isRolled: 0
+  order: -1
   delay: 0
   hiddenImages: []
   diceFaces: []
@@ -2408,7 +2409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimumDistance: 0.2
   maximumTime: 1
-  directionThreshold: 0.5
+  directionThreshold: 0.9
   dice: {fileID: 0}
 --- !u!4 &4587279628929336409 stripped
 Transform:

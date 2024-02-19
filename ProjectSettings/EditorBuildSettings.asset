@@ -35,4 +35,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/EunChong/Scenes/Level 8.unity
     guid: dd8ccea55f8f70d4da4b43b05cec3ade
+  - enabled: 1
+    path: Assets/EunChong/Scenes/Level 9.unity
+    guid: c3e7435cae0a62749b01eceae861224b
+  - enabled: 1
+    path: Assets/EunChong/Scenes/Level 10.unity
+    guid: e3a0511d111cd494ba2931094879391d
+  - enabled: 1
+    path: Assets/EunChong/Scenes/Level 11.unity
+    guid: 53e72e289b7ac074ea01e035d6bf0dc0
+  - enabled: 1
+    path: Assets/EunChong/Scenes/Level 12.unity
+    guid: 9f36cf4414204d545aff04feeea262f5
   m_configObjects: {}
