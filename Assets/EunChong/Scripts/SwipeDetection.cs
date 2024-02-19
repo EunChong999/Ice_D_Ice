@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SwipeDetection : MonoBehaviour
@@ -6,6 +7,11 @@ public class SwipeDetection : MonoBehaviour
     private float minimumDistance = .2f;
     [SerializeField]
     private float maximumTime = 1;
+    [SerializeField, Range(0f,1f)]
+    private float directionThreshold = .9f;
+
+    [HideInInspector]
+    public Dice dice;
 
     private InputManager inputManager;
 
@@ -17,6 +23,11 @@ public class SwipeDetection : MonoBehaviour
     private void Awake()
     {
         inputManager = InputManager.Instance;
+    }
+
+    private void Start()
+    {
+        dice = GetComponent<Dice>();
     }
 
     private void OnEnable()
@@ -48,8 +59,35 @@ public class SwipeDetection : MonoBehaviour
     {
         if (Vector3.Distance(startPosition, endPosition) >= minimumDistance && (endTime - startTime) <= maximumTime)
         {
-            Debug.Log("Swipe Detected");
-            Debug.DrawLine(startPosition, endPosition, Color.red, 5);
+            Vector3 direction = endPosition - startPosition;
+            Vector2 direction2D = new Vector2(direction.x, direction.y).normalized;
+            SwipeDirection(direction2D);
+        }
+    }
+
+    private void SwipeDirection(Vector2 direction)
+    {
+        if (dice != null)
+        {
+            if (Vector2.Dot(Vector2.up, direction) > directionThreshold)
+            {
+                dice.ControlDice(0);
+            }
+
+            else if (Vector2.Dot(Vector2.left, direction) > directionThreshold)
+            {
+                dice.ControlDice(1);
+            }
+
+            else if (Vector2.Dot(Vector2.down, direction) > directionThreshold)
+            {
+                dice.ControlDice(2);
+            }
+
+            else if (Vector2.Dot(Vector2.right, direction) > directionThreshold)
+            {
+                dice.ControlDice(3);
+            }
         }
     }
 }
