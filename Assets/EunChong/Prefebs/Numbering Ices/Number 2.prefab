@@ -140,7 +140,7 @@ Transform:
   - {fileID: 5158542397819854427}
   - {fileID: 301319316984595933}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &510508479554623451
 MonoBehaviour:
@@ -161,13 +161,21 @@ MonoBehaviour:
   trueMat: {fileID: 452193564557080545}
   falseMat: {fileID: 8376846646001282937}
   body: {fileID: 1109381935578537831}
-  ices:
-  - {fileID: 3682305354037352855, guid: 7e3272b65b587c74588bd9f1df03815a, type: 3}
-  - {fileID: 9062439464870846654, guid: 20f2e23a9fc62e643a04544b53050d4d, type: 3}
-  - {fileID: 8925435148296837890, guid: 2ec6847e5b35e0d419a02e21d54115e4, type: 3}
-  - {fileID: 5916215613414339493, guid: ded5998ba874baf4698b2ef15961249f, type: 3}
-  - {fileID: 149496823988118742, guid: ca4cca1f113f9af43a685428fd2685a9, type: 3}
-  - {fileID: 1398622995149103076, guid: 887f8be3c3d19764ea6a61f63080e442, type: 3}
+  meshFilters:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  targetMeshs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  iceMeshes:
+  - ices: []
+  - ices: []
+  - ices: []
+  - ices: []
+  - ices: []
+  - ices: []
 --- !u!65 &9090256979221147284
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -329,6 +337,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3437586839728294398}
     m_Modifications:
+    - target: {fileID: 544937896597289506, guid: 20f2e23a9fc62e643a04544b53050d4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3846018093981099296, guid: cdf67e8fd685bed4db738d625ba9e516,
+        type: 3}
     - target: {fileID: 8543205352998173188, guid: 20f2e23a9fc62e643a04544b53050d4d,
         type: 3}
       propertyPath: m_RootOrder

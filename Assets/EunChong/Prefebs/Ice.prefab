@@ -549,14 +549,48 @@ MonoBehaviour:
   trueMat: {fileID: 2901747457447323436}
   falseMat: {fileID: 8935725396005139867}
   body: {fileID: 1512288103188155537}
-  ices:
-  - {fileID: 3682305354037352855, guid: 7e3272b65b587c74588bd9f1df03815a, type: 3}
-  - {fileID: 9062439464870846654, guid: 20f2e23a9fc62e643a04544b53050d4d, type: 3}
-  - {fileID: 8925435148296837890, guid: 2ec6847e5b35e0d419a02e21d54115e4, type: 3}
-  - {fileID: 5916215613414339493, guid: ded5998ba874baf4698b2ef15961249f, type: 3}
-  - {fileID: 149496823988118742, guid: ca4cca1f113f9af43a685428fd2685a9, type: 3}
-  - {fileID: 1398622995149103076, guid: 887f8be3c3d19764ea6a61f63080e442, type: 3}
-  effectMusic: {fileID: 0}
+  meshFilters:
+  - {fileID: 5849283892385909599}
+  - {fileID: 8096423563342391533}
+  - {fileID: 2466178747209249625}
+  meshRenderers:
+  - {fileID: 825613973963227714}
+  - {fileID: 388324375969765130}
+  - {fileID: 7324989042663168998}
+  iceMaterials:
+  - materials:
+    - {fileID: -6478536213147159724, guid: 4fd01fc4e42fd624681aa1db9aacbcc9, type: 3}
+    - {fileID: 4874126678125670354, guid: 4fd01fc4e42fd624681aa1db9aacbcc9, type: 3}
+    - {fileID: -876546973899608171, guid: 4fd01fc4e42fd624681aa1db9aacbcc9, type: 3}
+  - materials:
+    - {fileID: -3846018093981099296, guid: 4fd01fc4e42fd624681aa1db9aacbcc9, type: 3}
+  - materials:
+    - {fileID: -3846018093981099296, guid: 4fd01fc4e42fd624681aa1db9aacbcc9, type: 3}
+  iceMeshes:
+  - meshes:
+    - {fileID: -5495902117074765545, guid: 4fd01fc4e42fd624681aa1db9aacbcc9, type: 3}
+    - {fileID: 4493585093827132993, guid: 4fd01fc4e42fd624681aa1db9aacbcc9, type: 3}
+    - {fileID: -1550514412580984892, guid: 4fd01fc4e42fd624681aa1db9aacbcc9, type: 3}
+  - meshes:
+    - {fileID: -5495902117074765545, guid: cdf67e8fd685bed4db738d625ba9e516, type: 3}
+    - {fileID: 4493585093827132993, guid: cdf67e8fd685bed4db738d625ba9e516, type: 3}
+    - {fileID: -1550514412580984892, guid: cdf67e8fd685bed4db738d625ba9e516, type: 3}
+  - meshes:
+    - {fileID: -5495902117074765545, guid: 7309a0431f9892c4e81385434299291f, type: 3}
+    - {fileID: 4493585093827132993, guid: 7309a0431f9892c4e81385434299291f, type: 3}
+    - {fileID: -1550514412580984892, guid: 7309a0431f9892c4e81385434299291f, type: 3}
+  - meshes:
+    - {fileID: -5495902117074765545, guid: 10f49ddf4733aae41b5f64c68ae05d71, type: 3}
+    - {fileID: 4493585093827132993, guid: 10f49ddf4733aae41b5f64c68ae05d71, type: 3}
+    - {fileID: -1550514412580984892, guid: 10f49ddf4733aae41b5f64c68ae05d71, type: 3}
+  - meshes:
+    - {fileID: -5495902117074765545, guid: 1fd8a3c7cb93ed943a4934791ba94e34, type: 3}
+    - {fileID: 4493585093827132993, guid: 1fd8a3c7cb93ed943a4934791ba94e34, type: 3}
+    - {fileID: -1550514412580984892, guid: 1fd8a3c7cb93ed943a4934791ba94e34, type: 3}
+  - meshes:
+    - {fileID: -5495902117074765545, guid: e5790de7658bc1949bbce0b0adbe08ca, type: 3}
+    - {fileID: 4493585093827132993, guid: e5790de7658bc1949bbce0b0adbe08ca, type: 3}
+    - {fileID: -1550514412580984892, guid: e5790de7658bc1949bbce0b0adbe08ca, type: 3}
 --- !u!65 &4997039660352849707
 BoxCollider:
   m_ObjectHideFlags: 0

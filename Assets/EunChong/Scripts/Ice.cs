@@ -1,28 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Ice : MonoBehaviour
 {
     public bool isCleared;
+
     [SerializeField] bool isFixType;
     [SerializeField] bool isChangedType;
     [SerializeField] float fixNum;
+
     [SerializeField] GameObject trueMat;
     [SerializeField] GameObject falseMat;
-    public GameObject[] ices;
-    float angle;
+    [SerializeField] GameObject body;
+
+    [SerializeField] MeshFilter[] meshFilters = new MeshFilter[3];
+    [SerializeField] MeshRenderer[] meshRenderers = new MeshRenderer[3];
+    [SerializeField] IceMaterial[] iceMaterials = new IceMaterial[3];
+    [SerializeField] IceMesh[] iceMeshes = new IceMesh[6];
 
     GameObject effectMusic;
     AudioSource[] audioSources;
+
+    [Serializable]
+    struct IceMesh
+    {
+        public Mesh[] meshes;
+    }
+
+    [Serializable]
+    struct IceMaterial
+    {
+        public Material[] materials;
+    }
 
     private void Start()
     {
         effectMusic = GameObject.Find("EffectMusic");
         audioSources = effectMusic.GetComponents<AudioSource>();
 
-        if (transform.rotation.eulerAngles.y != 0) 
+        if (transform.rotation.eulerAngles.y != 0)
         {
             isChangedType = true;
         }
@@ -34,7 +51,9 @@ public class Ice : MonoBehaviour
 
     public void ChangeBody(int num, bool isShapeChanged)
     {
-        if (!isFixType) 
+        float angle;
+
+        if (!isFixType)
         {
             if (isShapeChanged)
             {
@@ -72,6 +91,10 @@ public class Ice : MonoBehaviour
                         break;
                 }
             }
+
+            ChangeMesh(num);
+            ChangeMaterial();
+            ChangeAngle(angle);
         }
         else
         {
@@ -205,6 +228,27 @@ public class Ice : MonoBehaviour
                 trueMat.SetActive(false);
                 falseMat.SetActive(true);
             }
+        }
+    }
+
+    private void ChangeAngle(float angle)
+    {
+        body.transform.eulerAngles = new Vector3(-90, angle, 0);
+    }
+
+    private void ChangeMesh(int num)
+    {
+        for (int i = 0; i < meshFilters.Length; i++)
+        {
+            meshFilters[i].mesh = iceMeshes[num - 1].meshes[i];
+        }
+    }
+
+    private void ChangeMaterial()
+    {
+        for (int i = 0; i < meshFilters.Length; i++)
+        {
+            meshRenderers[i].materials = iceMaterials[i].materials;
         }
     }
 }
