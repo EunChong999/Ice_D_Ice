@@ -57,12 +57,17 @@ public class SwipeDetection : MonoBehaviour
 
     private void DetectSwipe()
     {
-        if (Vector3.Distance(startPosition, endPosition) >= minimumDistance && (endTime - startTime) <= maximumTime)
+        if (!dice.holdingDetection.canShow)
         {
-            Vector3 direction = endPosition - startPosition;
-            Vector2 direction2D = new Vector2(direction.x, direction.y).normalized;
-            SwipeDirection(direction2D);
+            if (Vector3.Distance(startPosition, endPosition) >= minimumDistance && (endTime - startTime) <= maximumTime)
+            {
+                Vector3 direction = endPosition - startPosition;
+                Vector2 direction2D = new Vector2(direction.x, direction.y).normalized;
+                SwipeDirection(direction2D);
+            }
         }
+
+        dice.holdingDetection.StopHolding();
     }
 
     private void SwipeDirection(Vector2 direction)
@@ -87,6 +92,11 @@ public class SwipeDetection : MonoBehaviour
             else if (Vector2.Dot(new Vector2(1, 1), direction) > directionThreshold)
             {
                 dice.order = 3;
+            }
+
+            else
+            {
+                dice.order = -1;
             }
         }
     }
