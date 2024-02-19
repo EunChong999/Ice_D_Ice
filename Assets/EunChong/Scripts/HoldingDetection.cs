@@ -71,6 +71,7 @@ public class HoldingDetection : MonoBehaviour
     {
         endPosition = position;
         endTime = time;
+        StopHolding();
     }
 
     private void StartHolding()
@@ -78,10 +79,9 @@ public class HoldingDetection : MonoBehaviour
         holding = true;
     }
 
-    public void StopHolding()
+    private void StopHolding()
     {
         holding = false;
         holdingTime = 0;
-        canShow = false;
     }
 }
