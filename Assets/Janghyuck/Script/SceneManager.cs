@@ -25,15 +25,6 @@ public class SceneManager : MonoBehaviour
         {
             ToTitle();
         }
-
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 0)
-        {
-            Cursor.visible = false;
-        }
-        else
-        {
-            Cursor.visible = true;
-        }
     }
 
     //ESC를 눌렀을 때 Title로 이동하는 함수
