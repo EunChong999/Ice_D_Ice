@@ -2342,10 +2342,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8482310839564813649}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6a08a757b1206e547a27821bbf6b3784,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7756298170110341928}
   m_SourcePrefab: {fileID: 100100000, guid: 6a08a757b1206e547a27821bbf6b3784, type: 3}
 --- !u!1 &3810777731382664931 stripped
 GameObject:
@@ -2387,6 +2383,7 @@ MonoBehaviour:
   - {fileID: 2060991957041712950}
   - {fileID: 6448753733774372125}
   virtualCamera: {fileID: 0}
+  swipeDetection: {fileID: 0}
 --- !u!114 &7029850412052315027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2415,22 +2412,9 @@ MonoBehaviour:
   maximumTime: 1
   directionThreshold: 0.9
   dice: {fileID: 0}
---- !u!114 &7756298170110341928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3810777731382664931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5bdec0c1fa978049b5eedc2be100ca2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   limitTime: 0.25
   holding: 0
   canShow: 0
-  dice: {fileID: 0}
 --- !u!4 &4587279628929336409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6a08a757b1206e547a27821bbf6b3784,
