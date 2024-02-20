@@ -7,7 +7,7 @@ public class SwipeDetection : MonoBehaviour
     private float minimumDistance = .2f;
     [SerializeField]
     private float maximumTime = 1;
-    [SerializeField, Range(0f,1f)]
+    [SerializeField, Range(0f, 1f)]
     private float directionThreshold = .9f;
 
     [HideInInspector]
@@ -20,6 +20,17 @@ public class SwipeDetection : MonoBehaviour
     private Vector2 endPosition;
     private float endTime;
 
+    private float holdingTime;
+
+    [SerializeField]
+    private float limitTime;
+
+    [HideInInspector]
+    public bool holding;
+
+    [HideInInspector]
+    public bool canShow;
+
     private void Awake()
     {
         inputManager = InputManager.Instance;
@@ -28,6 +39,19 @@ public class SwipeDetection : MonoBehaviour
     private void Start()
     {
         dice = GetComponent<Dice>();
+    }
+
+    private void Update()
+    {
+        if (holding)
+        {
+            holdingTime += Time.deltaTime;
+        }
+
+        if (holdingTime > limitTime)
+        {
+            canShow = true;
+        }
     }
 
     private void OnEnable()
@@ -46,6 +70,7 @@ public class SwipeDetection : MonoBehaviour
     {
         startPosition = position;
         startTime = time;
+        StartHolding();
     }
 
     private void SwipeEnd(Vector2 position, float time)
@@ -53,11 +78,12 @@ public class SwipeDetection : MonoBehaviour
         endPosition = position;
         endTime = time;
         DetectSwipe();
+        StopHolding();
     }
 
     private void DetectSwipe()
     {
-        if (!dice.holdingDetection.canShow)
+        if (!canShow)
         {
             if (Vector3.Distance(startPosition, endPosition) >= minimumDistance && (endTime - startTime) <= maximumTime)
             {
@@ -67,19 +93,19 @@ public class SwipeDetection : MonoBehaviour
             }
         }
 
-        dice.holdingDetection.canShow = false;
+        canShow = false;
     }
 
     private void SwipeDirection(Vector2 direction)
     {
         if (dice != null)
         {
-            if (Vector2.Dot(new Vector2(-1, 1), direction) > directionThreshold) 
+            if (Vector2.Dot(new Vector2(-1, 1), direction) > directionThreshold)
             {
                 dice.order = 0;
             }
 
-            else if (Vector2.Dot(new Vector2(-1, -1), direction) > directionThreshold) 
+            else if (Vector2.Dot(new Vector2(-1, -1), direction) > directionThreshold)
             {
                 dice.order = 1;
             }
@@ -99,5 +125,16 @@ public class SwipeDetection : MonoBehaviour
                 dice.order = -1;
             }
         }
+    }
+
+    private void StartHolding()
+    {
+        holding = true;
+    }
+
+    private void StopHolding()
+    {
+        holding = false;
+        holdingTime = 0;
     }
 }

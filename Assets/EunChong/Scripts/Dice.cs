@@ -29,14 +29,11 @@ public class Dice : MonoBehaviour
 
     [HideInInspector]
     public SwipeDetection swipeDetection;
-    [HideInInspector]
-    public HoldingDetection holdingDetection;
 
     private void Start()
     {
         waitForSeconds = new WaitForSeconds(delay);
         swipeDetection = GetComponent<SwipeDetection>();
-        holdingDetection = GetComponent<HoldingDetection>();
 
         swipeDetection.dice = this;
     }
@@ -45,7 +42,7 @@ public class Dice : MonoBehaviour
     {
         CheckHiddenFaces();
 
-        if (!holdingDetection.holding)
+        if (!swipeDetection.holding)
         {
             InitState();
 
@@ -56,7 +53,7 @@ public class Dice : MonoBehaviour
         {
             if (!canReveal)
             {
-                if (holdingDetection.canShow)
+                if (swipeDetection.canShow)
                 {
                     StartCoroutine(CoolTime());
                     canReveal = true;
@@ -65,7 +62,7 @@ public class Dice : MonoBehaviour
 
             if (isRevealing)
             {
-                if (holdingDetection.canShow)
+                if (swipeDetection.canShow)
                 {
                     hiddenFaces.SetActive(true);
 
