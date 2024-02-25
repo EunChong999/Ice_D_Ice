@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class BtnManager : MonoBehaviour
+public class SettingPanel : MonoBehaviour
 {
-    public static BtnManager Instance;
+    public static SettingPanel Instance;
 
     [SerializeField] public GameObject setting;
 
     void Awake()
     {
-        if(Instance != null)
+        if (Instance != null) 
         {
             Instance = this; 
         }
