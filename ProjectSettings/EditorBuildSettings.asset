@@ -12,39 +12,12 @@ EditorBuildSettings:
     path: Assets/EunChong/Scenes/Game Tutorial Scene.unity
     guid: b475f83ff745c72469cc325f2de17864
   - enabled: 1
+    path: Assets/EunChong/Scenes/Game Map Scene.unity
+    guid: 0e89fdec53538774e89817a4ab71b3eb
+  - enabled: 1
+    path: Assets/EunChong/Scenes/Game Stage Scene.unity
+    guid: 496b27f640a7c3e4aa25acd7810ee7bc
+  - enabled: 1
     path: Assets/EunChong/Scenes/Game Play Scene.unity
     guid: f551915220d5ddf48af560aa8f835982
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 2.unity
-    guid: 33560347172a83b49bcc17794363cf93
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 3.unity
-    guid: fb42cda93d2564e42a9a7afc401bd21a
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 4.unity
-    guid: 1e37ee119b8559941987ddbd094cd149
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 5.unity
-    guid: 2de409108a08ec249a127d31f6718beb
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 6.unity
-    guid: f7cf773d12437c940b6e4d856e61f64d
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 7.unity
-    guid: d5345f8ffeaea9c4eaf6390e19cdbb1a
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 8.unity
-    guid: dd8ccea55f8f70d4da4b43b05cec3ade
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 9.unity
-    guid: c3e7435cae0a62749b01eceae861224b
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 10.unity
-    guid: e3a0511d111cd494ba2931094879391d
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 11.unity
-    guid: 53e72e289b7ac074ea01e035d6bf0dc0
-  - enabled: 1
-    path: Assets/EunChong/Scenes/Level 12.unity
-    guid: 9f36cf4414204d545aff04feeea262f5
   m_configObjects: {}

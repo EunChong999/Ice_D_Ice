@@ -60,17 +60,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  targetMeshs:
+  meshRenderers:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  iceMaterials:
+  - materials: []
+  - materials: []
+  - materials: []
   iceMeshes:
-  - ices: []
-  - ices: []
-  - ices: []
-  - ices: []
-  - ices: []
-  - ices: []
+  - meshes: []
+  - meshes: []
+  - meshes: []
+  - meshes: []
+  - meshes: []
+  - meshes: []
 --- !u!65 &2086509623969928775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -341,7 +345,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -3846018093981099296, guid: 10f49ddf4733aae41b5f64c68ae05d71,
+      objectReference: {fileID: -3846018093981099296, guid: 4fd01fc4e42fd624681aa1db9aacbcc9,
         type: 3}
     - target: {fileID: 5916215613414339493, guid: ded5998ba874baf4698b2ef15961249f,
         type: 3}
