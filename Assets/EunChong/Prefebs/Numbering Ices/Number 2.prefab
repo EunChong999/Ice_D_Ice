@@ -158,9 +158,11 @@ MonoBehaviour:
   isFixType: 1
   isChangedType: 0
   fixNum: 2
+  distance: 2
   trueMat: {fileID: 452193564557080545}
   falseMat: {fileID: 8376846646001282937}
   body: {fileID: 1109381935578537831}
+  obstacleChecker: {fileID: 0}
   meshFilters:
   - {fileID: 0}
   - {fileID: 0}

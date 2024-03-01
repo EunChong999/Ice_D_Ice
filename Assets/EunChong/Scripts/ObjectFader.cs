@@ -14,6 +14,7 @@ public class ObjectFader : MonoBehaviour
 
     Material[] materials = new Material[4];
     public bool doFade = false;
+    public bool forceDoFade = false;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class ObjectFader : MonoBehaviour
 
     private void Update()
     {
-        if (doFade)
+        if (forceDoFade || doFade)
             FadeNow();
         else
             ResetFade();

@@ -456,12 +456,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSpeed: 10
-  distance: 1.5
-  fadeAmount: 0.001
+  fadeAmount: 0.01
   originOpacity: 1
   doFade: 0
   forceDoFade: 0
-  ices: []
 --- !u!1 &3510344674284365594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8416272007918961125, guid: 8045bf60584277f478f39eee113d4b8a,
@@ -481,12 +479,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSpeed: 10
-  distance: 1.5
-  fadeAmount: 0.001
+  fadeAmount: 0.01
   originOpacity: 1
   doFade: 0
   forceDoFade: 0
-  ices: []
 --- !u!1 &4134672392272872812 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -208595431880416365, guid: 8045bf60584277f478f39eee113d4b8a,
@@ -506,12 +502,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSpeed: 10
-  distance: 1.5
-  fadeAmount: 0.001
+  fadeAmount: 0.01
   originOpacity: 1
   doFade: 0
   forceDoFade: 0
-  ices: []
 --- !u!1 &4372386846519518959 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -516098083770646512, guid: 8045bf60584277f478f39eee113d4b8a,
@@ -531,12 +525,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSpeed: 10
-  distance: 1.5
-  fadeAmount: 0.001
+  fadeAmount: 0.01
   originOpacity: 1
   doFade: 0
   forceDoFade: 0
-  ices: []
 --- !u!1 &4466698471438091675 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -466329591000292508, guid: 8045bf60584277f478f39eee113d4b8a,
@@ -556,12 +548,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSpeed: 10
-  distance: 1.5
-  fadeAmount: 0.001
+  fadeAmount: 0.01
   originOpacity: 1
   doFade: 0
   forceDoFade: 0
-  ices: []
 --- !u!1 &5762292643932902555 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 8045bf60584277f478f39eee113d4b8a,
@@ -581,12 +571,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSpeed: 10
-  distance: 1.5
-  fadeAmount: 0.001
+  fadeAmount: 0.01
   originOpacity: 1
   doFade: 0
   forceDoFade: 0
-  ices: []
 --- !u!1 &5876332421408601757 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7640558969779515294, guid: 8045bf60584277f478f39eee113d4b8a,
@@ -606,12 +594,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSpeed: 10
-  distance: 1.5
-  fadeAmount: 0.001
+  fadeAmount: 0.01
   originOpacity: 1
   doFade: 0
   forceDoFade: 0
-  ices: []
 --- !u!1 &6388867929405655694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7146521406498821007, guid: 8045bf60584277f478f39eee113d4b8a,
@@ -631,9 +617,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeSpeed: 10
-  distance: 1.5
-  fadeAmount: 0.001
+  fadeAmount: 0.01
   originOpacity: 1
   doFade: 0
   forceDoFade: 0
-  ices: []
