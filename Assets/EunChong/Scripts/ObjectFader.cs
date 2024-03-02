@@ -14,11 +14,10 @@ public class ObjectFader : MonoBehaviour
 
     Material[] materials = new Material[4];
     public bool doFade = false;
-    public bool forceDoFade = false;
 
     private void Start()
     {
-        for (int i = 0; i < GetComponent<Renderer>().materials.Length; i++) 
+        for (int i = 0; i < GetComponent<Renderer>().materials.Length; i++)
         {
             materials[i] = GetComponent<Renderer>().materials[i];
         }
@@ -26,7 +25,7 @@ public class ObjectFader : MonoBehaviour
 
     private void Update()
     {
-        if (forceDoFade || doFade)
+        if (doFade)
             FadeNow();
         else
             ResetFade();

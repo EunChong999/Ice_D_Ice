@@ -9,12 +9,10 @@ public class Ice : MonoBehaviour
     [SerializeField] bool isFixType;
     [SerializeField] bool isChangedType;
     [SerializeField] float fixNum;
-    [SerializeField] float distance;
 
     [SerializeField] GameObject trueMat;
     [SerializeField] GameObject falseMat;
     [SerializeField] GameObject body;
-    [SerializeField] ObstacleChecker obstacleChecker;
 
     [SerializeField] MeshFilter[] meshFilters = new MeshFilter[3];
     [SerializeField] MeshRenderer[] meshRenderers = new MeshRenderer[3];
@@ -40,7 +38,6 @@ public class Ice : MonoBehaviour
     {
         effectMusic = GameObject.Find("EffectMusic");
         audioSources = effectMusic.GetComponents<AudioSource>();
-        obstacleChecker = FindObjectOfType<ObstacleChecker>();
 
         if (transform.rotation.eulerAngles.y != 0)
         {
@@ -49,18 +46,6 @@ public class Ice : MonoBehaviour
         else
         {
             isChangedType = false;
-        }
-    }
-
-    private void Update()
-    {
-        foreach (ObjectFader objectFader in obstacleChecker.objectFaders) 
-        {
-            if (Vector3.Distance(transform.position, objectFader.transform.position) < distance &&
-                Vector3.Distance(objectFader.transform.position, new Vector3(100, 0, 0)) > Vector3.Distance(transform.position, new Vector3(100, 0, 0)))
-            {
-                objectFader.forceDoFade = true;
-            }
         }
     }
 
