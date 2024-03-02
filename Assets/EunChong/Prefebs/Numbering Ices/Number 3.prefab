@@ -53,11 +53,9 @@ MonoBehaviour:
   isFixType: 1
   isChangedType: 0
   fixNum: 3
-  distance: 2
   trueMat: {fileID: 6212515605241808938}
   falseMat: {fileID: 2519442301712754123}
   body: {fileID: 8973828632997026752}
-  obstacleChecker: {fileID: 0}
   meshFilters:
   - {fileID: 0}
   - {fileID: 0}
@@ -343,6 +341,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2432877901117719107}
     m_Modifications:
+    - target: {fileID: 110832382177378718, guid: 2ec6847e5b35e0d419a02e21d54115e4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3846018093981099296, guid: 1fd8a3c7cb93ed943a4934791ba94e34,
+        type: 3}
+    - target: {fileID: 2063929500689220674, guid: 2ec6847e5b35e0d419a02e21d54115e4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3846018093981099296, guid: 1fd8a3c7cb93ed943a4934791ba94e34,
+        type: 3}
     - target: {fileID: 8112763411390300600, guid: 2ec6847e5b35e0d419a02e21d54115e4,
         type: 3}
       propertyPath: m_RootOrder

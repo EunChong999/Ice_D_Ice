@@ -53,11 +53,9 @@ MonoBehaviour:
   isFixType: 1
   isChangedType: 0
   fixNum: 6
-  distance: 2
   trueMat: {fileID: 5476890314454347036}
   falseMat: {fileID: 7458997385088137396}
   body: {fileID: 4783546203148289392}
-  obstacleChecker: {fileID: 0}
   meshFilters:
   - {fileID: 0}
   - {fileID: 0}
@@ -403,6 +401,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7583123582683825528, guid: 887f8be3c3d19764ea6a61f63080e442,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3846018093981099296, guid: 1fd8a3c7cb93ed943a4934791ba94e34,
+        type: 3}
+    - target: {fileID: 8363720229272748196, guid: 887f8be3c3d19764ea6a61f63080e442,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3846018093981099296, guid: 1fd8a3c7cb93ed943a4934791ba94e34,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
