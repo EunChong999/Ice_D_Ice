@@ -34,11 +34,16 @@ public class Ice : MonoBehaviour
         public Material[] materials;
     }
 
-    private void Start()
+    private void OnEnable()
     {
         effectMusic = GameObject.Find("EffectMusic");
-        audioSources = effectMusic.GetComponents<AudioSource>();
 
+        if (effectMusic != null)
+            audioSources = effectMusic.GetComponents<AudioSource>();
+    }
+
+    private void Start()
+    {
         if (transform.rotation.eulerAngles.y != 0)
         {
             isChangedType = true;

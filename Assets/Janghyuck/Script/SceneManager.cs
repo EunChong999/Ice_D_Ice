@@ -1,13 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SceneManager : MonoBehaviour
 {
     public bool isTutorialCompleted;
+    public GameObject[] stages;
+    public GameObject blockScreen;
+
+    public int currentMapIndex;
+    public int currentStageIndex;
 
     public static SceneManager instance;
+    [SerializeField] float fadeTime;
+    [SerializeField] float spawnTime;
+    WaitForSeconds waitForFadeSeconds;
+    WaitForSeconds waitForSpawnSeconds;
 
     private void Awake()
     {
@@ -19,46 +27,96 @@ public class SceneManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        PlayerPrefs.SetInt("isTutorialCompleted", Convert.ToInt32(isTutorialCompleted));
+        waitForFadeSeconds = new WaitForSeconds(fadeTime);
+        waitForSpawnSeconds = new WaitForSeconds(spawnTime);
+    }
+
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && !FadeEffect.instance.isFading)
         {
-            ToTitle();
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Game Title Scene")
+            {
+                Application.Quit();
+            }
+            else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Game Tutorial Scene")
+            {
+                LoadTitleScene();
+            }
+            else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Game Map Scene")
+            {
+                LoadTitleScene();
+            }
+            else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Game Stage Scene")
+            {
+                LoadMapScene();
+            }
+            else if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Game Play Scene")
+            {
+                LoadStageScene();
+            }
         }
-    }
 
-    //ESC를 눌렀을 때 Title로 이동하는 함수
-    public void ToTitle()
-    {
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex != 0)
+        if (FadeEffect.instance.isFading)
         {
-            Cursor.visible = false;
-
-            FadeEffect.instance.FadeOut();
-
-            if (FadeEffect.instance.isFadeIn)
-                StartCoroutine(SceneLoad(0));
+            blockScreen.SetActive(true);
         }
         else
         {
-            Cursor.visible = true;
-
-            Application.Quit();
+            blockScreen.SetActive(false);
         }
     }
 
-    public void ToStage(int index)
+    public void LoadTitleScene()
+    {
+        StartCoroutine(SceneLoad("Game Title Scene"));
+    }
+
+    public void LoadTutorialScene()
+    {
+        StartCoroutine(SceneLoad("Game Tutorial Scene"));
+    }
+
+    public void LoadMapScene()
+    {
+        StartCoroutine(SceneLoad("Game Map Scene"));
+    }
+
+    public void LoadStageScene()
+    {
+        StartCoroutine(SceneLoad("Game Stage Scene"));
+    }
+
+    public void LoadPlayScene(int index)
+    {
+        if (index <= stages.Length) 
+        {
+            currentStageIndex = index;
+            StartCoroutine(SceneLoad("Game Play Scene"));
+            StartCoroutine(StageSpawn(currentStageIndex));
+        }
+        else
+        {
+            LoadStageScene();
+        }
+    }
+
+    IEnumerator SceneLoad(string name)
     {
         FadeEffect.instance.FadeOut();
 
-        if (FadeEffect.instance.isFadeIn)
-            StartCoroutine(SceneLoad(index + 1));
+        yield return waitForFadeSeconds;
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(name);
+        FadeEffect.instance.FadeIn();
     }
 
-    IEnumerator SceneLoad(int index)
+    IEnumerator StageSpawn(int index)
     {
-        yield return new WaitForSeconds(1f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(index);
-        FadeEffect.instance.FadeIn();
+        yield return waitForSpawnSeconds;
+        Instantiate(stages[index - 1], transform.position, Quaternion.identity);
     }
 }

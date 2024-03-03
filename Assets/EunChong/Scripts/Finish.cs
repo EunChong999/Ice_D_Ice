@@ -54,17 +54,33 @@ public class Finish : MonoBehaviour
         {
             other.GetComponent<Point>().FinSound();
 
-            if (index == 0) 
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Game Tutorial Scene") 
             {
-                SceneManager.instance.ToTitle();
+                SceneManager.instance.LoadMapScene();
             }
             else
             {
-                SceneManager.instance.ToStage(index);
+                SceneManager.instance.LoadPlayScene(SceneManager.instance.currentStageIndex + 1);
+
+                switch (SceneManager.instance.currentMapIndex)
+                {
+                    case 1:
+                        if (PlayerPrefs.GetInt("PlainWorldHighestLevel", 1) <= SceneManager.instance.currentStageIndex)
+                            PlayerPrefs.SetInt("PlainWorldHighestLevel", SceneManager.instance.currentStageIndex);
+                        break;
+                    case 2:
+                        if (PlayerPrefs.GetInt("ForestWorldHighestLevel", 1) <= SceneManager.instance.currentStageIndex - 21)
+                            PlayerPrefs.SetInt("ForestWorldHighestLevel", SceneManager.instance.currentStageIndex - 21);
+                        break;
+                    case 3:
+                        if (PlayerPrefs.GetInt("MountWorldHighestLevel", 1) <= SceneManager.instance.currentStageIndex - 42)
+                            PlayerPrefs.SetInt("MountWorldHighestLevel", SceneManager.instance.currentStageIndex - 42);
+                        break;
+                }
             }
 
             particleSystem.Play();
-            SceneManager.instance.isTutorialCompleted = true;
+            PlayerPrefs.SetInt("isTutorialCompleted", 1);  
             isLoading = true;
         }
     }
