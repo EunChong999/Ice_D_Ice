@@ -884,6 +884,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EffectMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 6730293423235034053, guid: 7aa94ebdd7c78f541b5d5b770b2186fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7858633976182818673, guid: 7aa94ebdd7c78f541b5d5b770b2186fa,
         type: 3}
       propertyPath: DopplerLevel

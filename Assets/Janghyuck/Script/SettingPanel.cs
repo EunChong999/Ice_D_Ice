@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+using System;
 
 public class SettingPanel : MonoBehaviour
 {
@@ -30,23 +27,16 @@ public class SettingPanel : MonoBehaviour
 
     public void Tutorial()
     {
-        if (SceneManager.instance.isTutorialCompleted) 
+        if (Convert.ToBoolean(PlayerPrefs.GetInt("isTutorialCompleted", 1))) 
         {
-            SceneManager.instance.ToStage(1);
+            SceneManager.instance.LoadMapScene();
         }
         else
         {
             FadeEffect.instance.FadeOut();
 
             if (FadeEffect.instance.isFadeIn)
-                StartCoroutine(SceneLoad());
+                SceneManager.instance.LoadTutorialScene();
         }
-    }
-
-    IEnumerator SceneLoad()
-    {
-        yield return new WaitForSeconds(1f);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
-        FadeEffect.instance.FadeIn();
     }
 }

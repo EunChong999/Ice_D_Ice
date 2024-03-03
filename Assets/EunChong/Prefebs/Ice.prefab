@@ -591,6 +591,8 @@ MonoBehaviour:
     - {fileID: -5495902117074765545, guid: e5790de7658bc1949bbce0b0adbe08ca, type: 3}
     - {fileID: 4493585093827132993, guid: e5790de7658bc1949bbce0b0adbe08ca, type: 3}
     - {fileID: -1550514412580984892, guid: e5790de7658bc1949bbce0b0adbe08ca, type: 3}
+  effectMusic: {fileID: 6730293423235034053, guid: 7aa94ebdd7c78f541b5d5b770b2186fa,
+    type: 3}
 --- !u!65 &4997039660352849707
 BoxCollider:
   m_ObjectHideFlags: 0
