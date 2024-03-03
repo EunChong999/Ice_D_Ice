@@ -93,6 +93,7 @@ public class SceneManager : MonoBehaviour
         if (index <= stages.Length) 
         {
             currentStageIndex = index;
+            currentMapIndex = (index + 20) / 21;
             StartCoroutine(SceneLoad("Game Play Scene"));
             StartCoroutine(StageSpawn(currentStageIndex));
         }
