@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SceneManager : MonoBehaviour
 {
-    public bool isTutorialCompleted;
     public GameObject[] stages;
     public GameObject blockScreen;
 
@@ -29,7 +28,6 @@ public class SceneManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("isTutorialCompleted", Convert.ToInt32(isTutorialCompleted));
         waitForFadeSeconds = new WaitForSeconds(fadeTime);
         waitForSpawnSeconds = new WaitForSeconds(spawnTime);
     }
