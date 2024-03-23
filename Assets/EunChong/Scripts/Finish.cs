@@ -57,6 +57,7 @@ public class Finish : MonoBehaviour
             if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Game Tutorial Scene") 
             {
                 SceneManager.instance.LoadMapScene();
+                PlayerPrefs.SetInt("isTutorialCompleted", 1);
             }
             else
             {

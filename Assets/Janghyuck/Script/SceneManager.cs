@@ -30,6 +30,9 @@ public class SceneManager : MonoBehaviour
     {
         waitForFadeSeconds = new WaitForSeconds(fadeTime);
         waitForSpawnSeconds = new WaitForSeconds(spawnTime);
+
+        if (!Convert.ToBoolean(PlayerPrefs.GetInt("isTutorialCompleted")))
+            PlayerPrefs.SetInt("isTutorialCompleted", 0);
     }
 
     public void Update()
