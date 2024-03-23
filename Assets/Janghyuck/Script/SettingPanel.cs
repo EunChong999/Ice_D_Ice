@@ -27,7 +27,7 @@ public class SettingPanel : MonoBehaviour
 
     public void Tutorial()
     {
-        if (Convert.ToBoolean(PlayerPrefs.GetInt("isTutorialCompleted", 1))) 
+        if (Convert.ToBoolean(PlayerPrefs.GetInt("isTutorialCompleted"))) 
         {
             SceneManager.instance.LoadMapScene();
         }

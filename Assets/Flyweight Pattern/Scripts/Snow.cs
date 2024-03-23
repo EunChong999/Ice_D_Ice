@@ -52,6 +52,6 @@ public class Snow : MonoBehaviour
         meshFilter.sharedMesh = GetMeshRenderer(meshRendererAddress).GetComponent<MeshFilter>().sharedMesh;
 
         // 크기 설정
-        transform.localScale = size;
+        mesh.transform.localScale = size;
     }
 }

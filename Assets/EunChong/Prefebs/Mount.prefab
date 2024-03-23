@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8422535648588793016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7366252801908423565}
+  m_Layer: 0
+  m_Name: Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &7366252801908423565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8422535648588793016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1900542086070509155}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2155726172591552904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11,22 +42,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1c481edc2a567784a84f8eb7bcf91155,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c481edc2a567784a84f8eb7bcf91155,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c481edc2a567784a84f8eb7bcf91155,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c481edc2a567784a84f8eb7bcf91155,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1c481edc2a567784a84f8eb7bcf91155,
         type: 3}
@@ -101,12 +132,54 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1c481edc2a567784a84f8eb7bcf91155,
         type: 3}
       propertyPath: m_Name
-      value: mount2 Variant
+      value: Mount
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1c481edc2a567784a84f8eb7bcf91155,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 65702495048144492, guid: 1c481edc2a567784a84f8eb7bcf91155, type: 3}
     - {fileID: -8700617353114198275, guid: 1c481edc2a567784a84f8eb7bcf91155, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    - {fileID: -8391222552659086748, guid: 1c481edc2a567784a84f8eb7bcf91155, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1c481edc2a567784a84f8eb7bcf91155,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7366252801908423565}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1c481edc2a567784a84f8eb7bcf91155,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7897385846419026222}
   m_SourcePrefab: {fileID: 100100000, guid: 1c481edc2a567784a84f8eb7bcf91155, type: 3}
+--- !u!1 &1237298412032476377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1c481edc2a567784a84f8eb7bcf91155,
+    type: 3}
+  m_PrefabInstance: {fileID: 2155726172591552904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7897385846419026222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237298412032476377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bdc39a7d30950946b8b3688ef956fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mesh: {fileID: 8422535648588793016}
+  size: {x: 0.5, y: 0.5, z: 0.5}
+  meshRendererAddress: Low Poly/mount4
+  materialAddress: Low Poly/mountMat
+--- !u!4 &1900542086070509155 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1c481edc2a567784a84f8eb7bcf91155,
+    type: 3}
+  m_PrefabInstance: {fileID: 2155726172591552904}
+  m_PrefabAsset: {fileID: 0}
