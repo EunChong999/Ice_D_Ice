@@ -1329,7 +1329,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 4434819274910298408}
   speed: 5
-  pinchDetection: {fileID: 2911362142277902814}
 --- !u!222 &3047358446762111082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2074,7 +2073,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1386663146735650230}
   speed: 5
-  pinchDetection: {fileID: 2911362142277902814}
 --- !u!222 &4616610167177447895
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2349,7 +2347,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 7567792122905969934}
   speed: 5
-  pinchDetection: {fileID: 2911362142277902814}
 --- !u!222 &4086195097026019063
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3015,7 +3012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isZooming: 0
-  cameraSpeed: 4
+  cameraSpeed: 8
   cinemachine: {fileID: 0}
 --- !u!4 &4587279628929336409 stripped
 Transform:

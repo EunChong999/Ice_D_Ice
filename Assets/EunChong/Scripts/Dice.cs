@@ -46,65 +46,69 @@ public class Dice : MonoBehaviour
 
         if (!pinchDetection.isZooming)
         {
-        CheckHiddenFaces();
+            CheckHiddenFaces();
 
-        if (!swipeDetection.holding)
-        {
-            InitState();
-
-            RegulateDamping(2);
-        }
-
-        if (!isMoving)
-        {
-            if (!canReveal)
+            if (!swipeDetection.holding)
             {
-                if (swipeDetection.canShow)
+                InitState();
+
+                RegulateDamping(2);
+            }
+
+            if (!isMoving)
+            {
+                if (!canReveal)
                 {
-                    StartCoroutine(CoolTime());
-                    canReveal = true;
+                    if (swipeDetection.canShow)
+                    {
+                        StartCoroutine(CoolTime());
+                        canReveal = true;
+                    }
+                }
+
+                if (isRevealing)
+                {
+                    if (swipeDetection.canShow)
+                    {
+                        hiddenFaces.SetActive(true);
+
+                        RegulateDamping(1);
+                    }
+                }
+
+                if (order == 0 && checkers[0].isCollisioning) // Z축으로 움직일 때
+                {
+                    StartCoroutine(Roll(Vector3.forward));
+                    ChangeAxis(ref yPoints, ref zPoints, ref xPoints);
+                    order = -1;
+                }
+                else if (order == 1 && checkers[1].isCollisioning) // X축으로 움직일 때
+                {
+                    StartCoroutine(Roll(Vector3.left));
+                    ChangeAxis(ref xPoints, ref yPoints, ref zPoints);
+                    order = -1;
+                }
+                else if (order == 2 && checkers[2].isCollisioning) // Z축으로 움직일 때
+                {
+                    StartCoroutine(Roll(Vector3.back));
+                    ChangeAxis(ref yPoints, ref zPoints, ref xPoints);
+                    order = -1;
+                }
+                else if (order == 3 && checkers[3].isCollisioning) // X축으로 움직일 때
+                {
+                    StartCoroutine(Roll(Vector3.right));
+                    ChangeAxis(ref xPoints, ref yPoints, ref zPoints);
+                    order = -1;
                 }
             }
-
-            if (isRevealing)
+            else
             {
-                if (swipeDetection.canShow)
-                {
-                    hiddenFaces.SetActive(true);
-
-                    RegulateDamping(1);
-                }
-            }
-
-            if (order == 0 && checkers[0].isCollisioning) // Z축으로 움직일 때
-            {
-                StartCoroutine(Roll(Vector3.forward));
-                ChangeAxis(ref yPoints, ref zPoints, ref xPoints);
-                order = -1;
-            }
-            else if (order == 1 && checkers[1].isCollisioning) // X축으로 움직일 때
-            {
-                StartCoroutine(Roll(Vector3.left));
-                ChangeAxis(ref xPoints, ref yPoints, ref zPoints);
-                order = -1;
-            }
-            else if (order == 2 && checkers[2].isCollisioning) // Z축으로 움직일 때
-            {
-                StartCoroutine(Roll(Vector3.back));
-                ChangeAxis(ref yPoints, ref zPoints, ref xPoints);
-                order = -1;
-            }
-            else if (order == 3 && checkers[3].isCollisioning) // X축으로 움직일 때
-            {
-                StartCoroutine(Roll(Vector3.right));
-                ChangeAxis(ref xPoints, ref yPoints, ref zPoints);
-                order = -1;
+                InitState();
             }
         }
         else
         {
             InitState();
-        }
         }
     }
 
