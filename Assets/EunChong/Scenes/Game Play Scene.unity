@@ -198,6 +198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6080539468145026421, guid: 7aa94ebdd7c78f541b5d5b770b2186fa,
         type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080539468145026421, guid: 7aa94ebdd7c78f541b5d5b770b2186fa,
+        type: 3}
       propertyPath: DopplerLevel
       value: 0
       objectReference: {fileID: 0}
@@ -210,6 +215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EffectMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 6730293423235034053, guid: 7aa94ebdd7c78f541b5d5b770b2186fa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7858633976182818673, guid: 7aa94ebdd7c78f541b5d5b770b2186fa,
         type: 3}
@@ -333,6 +343,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dice
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810777731382664931, guid: 44deb2420ea6bc04b908f2122ffdd43d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4007539446889314317, guid: 44deb2420ea6bc04b908f2122ffdd43d,
         type: 3}
@@ -697,6 +712,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3571128223471399163, guid: 02d0b7e04a0701644a02b28adf9113d7,
+        type: 3}
+      propertyPath: Mute
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3571128223471399163, guid: 02d0b7e04a0701644a02b28adf9113d7,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2506912521086037587, guid: 0994896206cd3a641a0bf067ac5a6027,
+        type: 2}
     - target: {fileID: 3606964902360190352, guid: 02d0b7e04a0701644a02b28adf9113d7,
         type: 3}
       propertyPath: m_RootOrder
@@ -756,6 +782,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 4256160110552969441, guid: 02d0b7e04a0701644a02b28adf9113d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
