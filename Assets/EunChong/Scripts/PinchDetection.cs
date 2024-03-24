@@ -34,12 +34,8 @@ public class PinchDetection : MonoBehaviour
     {
         cinemachine = FindObjectOfType<CinemachineVirtualCamera>();
         controls.Touch.SecondaryTouchContact.started += _ => ZoomStart();
+        controls.Touch.PrimaryTouchContact.canceled += _ => ZoomEnd();
         controls.Touch.SecondaryTouchContact.canceled += _ => ZoomEnd();
-    }
-
-    private void Update()
-    {
-        cinemachine.m_Lens.OrthographicSize = Mathf.Clamp(cinemachine.m_Lens.OrthographicSize, 6, 10);
     }
 
     private void ZoomStart()
@@ -67,9 +63,10 @@ public class PinchDetection : MonoBehaviour
             {
                 float targetPosition = cinemachine.m_Lens.OrthographicSize;
                 targetPosition -= 1;
-                cinemachine.m_Lens.OrthographicSize = Mathf.Lerp(cinemachine.m_Lens.OrthographicSize, 
+                cinemachine.m_Lens.OrthographicSize = Mathf.MoveTowards(cinemachine.m_Lens.OrthographicSize, 
                     targetPosition, 
                     Time.deltaTime * cameraSpeed);
+                cinemachine.m_Lens.OrthographicSize = Mathf.Clamp(cinemachine.m_Lens.OrthographicSize, 6f, 10f);
             }
 
             // 줌인
@@ -77,9 +74,10 @@ public class PinchDetection : MonoBehaviour
             {
                 float targetPosition = cinemachine.m_Lens.OrthographicSize;
                 targetPosition += 1;
-                cinemachine.m_Lens.OrthographicSize = Mathf.Lerp(cinemachine.m_Lens.OrthographicSize,
+                cinemachine.m_Lens.OrthographicSize = Mathf.MoveTowards(cinemachine.m_Lens.OrthographicSize,
                     targetPosition,
                     Time.deltaTime * cameraSpeed);
+                cinemachine.m_Lens.OrthographicSize = Mathf.Clamp(cinemachine.m_Lens.OrthographicSize, 6f, 10f);
             }
 
             // 다음 루프를 위해 이전 거리를 기록
