@@ -14,6 +14,7 @@ public class SwipeDetection : MonoBehaviour
     public Dice dice;
 
     private InputManager inputManager;
+    private PinchDetection pinchDetection;
 
     private Vector2 startPosition;
     private float startTime;
@@ -38,19 +39,23 @@ public class SwipeDetection : MonoBehaviour
 
     private void Start()
     {
+        pinchDetection = GetComponent<PinchDetection>();
         dice = GetComponent<Dice>();
     }
 
     private void Update()
     {
-        if (holding)
+        if (!pinchDetection.isZooming)
         {
-            holdingTime += Time.deltaTime;
-        }
+            if (holding)
+            {
+                holdingTime += Time.deltaTime;
+            }
 
-        if (holdingTime > limitTime)
-        {
-            canShow = true;
+            if (holdingTime > limitTime)
+            {
+                canShow = true;
+            }
         }
     }
 
@@ -68,17 +73,23 @@ public class SwipeDetection : MonoBehaviour
 
     private void SwipeStart(Vector2 position, float time)
     {
-        startPosition = position;
-        startTime = time;
-        StartHolding();
+        if (!pinchDetection.isZooming)
+        {
+            startPosition = position;
+            startTime = time;
+            StartHolding();
+        }
     }
 
     private void SwipeEnd(Vector2 position, float time)
     {
-        endPosition = position;
-        endTime = time;
-        DetectSwipe();
-        StopHolding();
+        if (!pinchDetection.isZooming)
+        {
+            endPosition = position;
+            endTime = time;
+            DetectSwipe();
+            StopHolding();
+        }
     }
 
     private void DetectSwipe()

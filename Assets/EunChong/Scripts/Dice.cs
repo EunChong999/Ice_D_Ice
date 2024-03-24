@@ -29,17 +29,23 @@ public class Dice : MonoBehaviour
 
     [HideInInspector]
     public SwipeDetection swipeDetection;
+    private PinchDetection pinchDetection;
 
     private void Start()
     {
         waitForSeconds = new WaitForSeconds(delay);
         swipeDetection = GetComponent<SwipeDetection>();
+        pinchDetection = GetComponent<PinchDetection>();
 
         swipeDetection.dice = this;
     }
 
     private void Update()
     {
+
+
+        if (!pinchDetection.isZooming)
+        {
         CheckHiddenFaces();
 
         if (!swipeDetection.holding)
@@ -98,6 +104,7 @@ public class Dice : MonoBehaviour
         else
         {
             InitState();
+        }
         }
     }
 
