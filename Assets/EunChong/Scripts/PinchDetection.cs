@@ -47,7 +47,9 @@ public class PinchDetection : MonoBehaviour
     private void ZoomEnd()
     {
         isZooming = false;
-        StopCoroutine(zoomCoroutine);
+
+        if (zoomCoroutine != null)
+            StopCoroutine(zoomCoroutine);
     }
 
     IEnumerator ZoomDetection()
