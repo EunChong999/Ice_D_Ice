@@ -3012,7 +3012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isZooming: 0
-  cameraSpeed: 8
+  cameraSpeed: 25
   cinemachine: {fileID: 0}
 --- !u!4 &4587279628929336409 stripped
 Transform:
