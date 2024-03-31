@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 
 public class CutoffMaskUI : Image
 {
-    private void Update()
+    private void LateUpdate()
     {
         SetMaterialForRendering();
     }
