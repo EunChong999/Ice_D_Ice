@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,29 +6,29 @@ using UnityEngine.Rendering;
 
 public class CutoffMaskUI : Image
 {
-    private void LateUpdate()
+    protected override void Awake()
     {
         SetMaterialForRendering();
     }
 
-    // materialForRendering ¼Ó¼º ¿À¹ö¶óÀÌµù
+    // materialForRendering ì†ì„± ì˜¤ë²„ë¼ì´ë”©
     public override Material materialForRendering
     {
         get
         {
-            // ºÎ¸ğ Å¬·¡½ºÀÇ materialForRendering ¼Ó¼º ¹İÈ¯
+            // ë¶€ëª¨ í´ë˜ìŠ¤ì˜ materialForRendering ì†ì„± ë°˜í™˜
             return base.material;
         }
     }
 
-    // SetMaterialForRendering ¸Ş¼­µå
+    // SetMaterialForRendering ë©”ì„œë“œ
     private void SetMaterialForRendering()
     {
-        // ºÎ¸ğ Å¬·¡½ºÀÇ materialForRenderingÀ» º¹Á¦ÇÏ¿© »õ·Î¿î Material »ı¼º
+        // ë¶€ëª¨ í´ë˜ìŠ¤ì˜ materialForRenderingì„ ë³µì œí•˜ì—¬ ìƒˆë¡œìš´ Material ìƒì„±
         Material material = new Material(base.materialForRendering);
-        // ½ºÅÙ½Ç ºñ±³ ÇÔ¼ö¸¦ NotEqual·Î ¼³Á¤
+        // ìŠ¤í…ì‹¤ ë¹„êµ í•¨ìˆ˜ë¥¼ NotEqualë¡œ ì„¤ì •
         material.SetInt("_StencilComp", (int)CompareFunction.NotEqual);
-        // »õ·Î »ı¼ºÇÑ ÀçÁúÀ» ±âº» ÀçÁú·Î ¼³Á¤
+        // ìƒˆë¡œ ìƒì„±í•œ ì¬ì§ˆì„ ê¸°ë³¸ ì¬ì§ˆë¡œ ì„¤ì •
         base.material = material;
     }
 }
