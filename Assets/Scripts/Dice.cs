@@ -42,8 +42,6 @@ public class Dice : MonoBehaviour
 
     private void Update()
     {
-
-
         if (!pinchDetection.isZooming)
         {
             CheckHiddenFaces();
@@ -114,7 +112,7 @@ public class Dice : MonoBehaviour
 
     void CheckHiddenFaces()
     {
-        foreach (var x in xPoints)
+        foreach (Point x in xPoints)
         {
             if (x.isHidden)
             {
@@ -122,7 +120,7 @@ public class Dice : MonoBehaviour
             }
         }
 
-        foreach (var y in yPoints)
+        foreach (Point y in yPoints)
         {
             if (y.isHidden)
             {
@@ -130,7 +128,7 @@ public class Dice : MonoBehaviour
             }
         }
 
-        foreach (var z in zPoints)
+        foreach (Point z in zPoints)
         {
             if (z.isHidden)
             {

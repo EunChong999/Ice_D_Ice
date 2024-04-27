@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class Point : MonoBehaviour
@@ -20,7 +21,7 @@ public class Point : MonoBehaviour
 
     private void Update()
     {
-        isHidden = Vector3.Distance(transform.position, referencePoint.position) > 5;   
+        isHidden = (transform.position - referencePoint.position).sqrMagnitude > 27;
     }
 
     private void OnTriggerEnter(Collider other)
