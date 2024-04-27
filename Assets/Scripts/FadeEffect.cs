@@ -18,9 +18,9 @@ public class FadeEffect : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null) //instance가 null. 즉, 시스템상에 존재하고 있지 않을때
+        if (instance == null) 
         {
-            instance = this; //내자신을 instance로 넣어줍니다.
+            instance = this; 
         }
     }
 
