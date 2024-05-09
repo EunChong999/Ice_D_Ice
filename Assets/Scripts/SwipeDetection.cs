@@ -111,22 +111,22 @@ public class SwipeDetection : MonoBehaviour
     {
         if (dice != null)
         {
-            if (Vector2.Dot(new Vector2(-1, 1), direction) > directionThreshold)
+            if (Vector2.Dot(new Vector2(0, 1), direction) > directionThreshold)
             {
                 dice.order = 0;
             }
 
-            else if (Vector2.Dot(new Vector2(-1, -1), direction) > directionThreshold)
+            else if (Vector2.Dot(new Vector2(-1, 0), direction) > directionThreshold)
             {
                 dice.order = 1;
             }
 
-            else if (Vector2.Dot(new Vector2(1, -1), direction) > directionThreshold)
+            else if (Vector2.Dot(new Vector2(0, -1), direction) > directionThreshold)
             {
                 dice.order = 2;
             }
 
-            else if (Vector2.Dot(new Vector2(1, 1), direction) > directionThreshold)
+            else if (Vector2.Dot(new Vector2(1, 0), direction) > directionThreshold)
             {
                 dice.order = 3;
             }
