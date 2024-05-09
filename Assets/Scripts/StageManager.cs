@@ -21,9 +21,9 @@ public class StageManager : MonoBehaviour
         textMeshProUGUI.text = mapNames[SceneManager.instance.currentMapIndex - 1];
 
         // 각 세계의 최고 레벨을 로드
-        PlainWorldHighestLevel = PlayerPrefs.GetInt("PlainWorldHighestLevel", 21);
-        ForestWorldHighestLevel = PlayerPrefs.GetInt("ForestWorldHighestLevel", 21);
-        MountWorldHighestLevel = PlayerPrefs.GetInt("MountWorldHighestLevel", 21);
+        PlainWorldHighestLevel = PlayerPrefs.GetInt("PlainWorldHighestLevel", 1);
+        ForestWorldHighestLevel = PlayerPrefs.GetInt("ForestWorldHighestLevel", 0);
+        MountWorldHighestLevel = PlayerPrefs.GetInt("MountWorldHighestLevel", 0);
 
         // 현재 맵에 따라 레벨 버튼들의 상호작용을 설정
         switch (SceneManager.instance.currentMapIndex)
